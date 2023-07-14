@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+
 void main() {
   runApp(const MyApp());
 }
@@ -39,6 +40,7 @@ class HomePage extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 23.0),
+<<<<<<< HEAD
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -117,6 +119,72 @@ class HomePage extends StatelessWidget {
               ),
             ],
           ),
+=======
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const SizedBox(height: 26),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text(
+                  //textAlign: TextAlign.start,
+                  
+                  "Olá, boa noite!",
+                  
+                  style: TextStyle(
+                    
+                    fontFamily: 'FigTree',
+                    fontWeight: FontWeight.w500,
+                    fontSize: 24,
+                    color: Color(0xffC7411B),
+                  ),
+                ),
+                const SizedBox(width: 129),
+                Container(
+                  width: 58,
+                  height: 56,
+                  decoration: BoxDecoration(
+                    color: const Color(0xffC7411B),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Transform.rotate(
+                    angle: 3.14159 / 2, // Rotação de 90 graus (pi / 2 radianos)
+                    child: const Icon(
+                      Icons.search,
+                      color: Color(0xffFFFBF6),
+                      size: 30.5,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            
+            
+            const SizedBox(height: 4,),
+
+            
+             const Text(
+              
+              
+              
+              "Cardápio",
+              style: TextStyle(
+                fontFamily: 'FigTree',
+                fontWeight: FontWeight.w400,
+                fontSize: 20,
+                color: Color(0xffC7411B),
+              ),
+             
+              ),
+
+            const SizedBox(height: 16,),
+
+            
+
+            
+          ],
+>>>>>>> refs/remotes/origin/main
         ),
       ),
     );
