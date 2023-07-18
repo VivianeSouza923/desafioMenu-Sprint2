@@ -142,13 +142,17 @@ class HomePage extends StatelessWidget {
                         color: const Color(0xffFFB987),
                         borderRadius: BorderRadius.circular(20),
                       ),
-                        child: Text(
-                          "Sobremesas",
-                          style: TextStyle(
-                            fontFamily: 'FigTree',
-                            fontWeight: FontWeight.w400,
-                            fontSize: 18,
-                            
+                        child: const Padding(
+                          padding: EdgeInsets.symmetric(vertical: 17.0, horizontal: 15),
+                          child: Text(
+                            "Sobremesas",
+                            style: TextStyle(
+                              fontFamily: 'FigTree',
+                              fontWeight: FontWeight.w400,
+                              fontSize: 18,
+                              color: Color(0xffC7411B),
+                              
+                            ),
                           ),
                         ),
                     ),
