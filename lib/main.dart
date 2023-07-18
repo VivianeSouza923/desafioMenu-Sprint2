@@ -38,7 +38,7 @@ class HomePage extends StatelessWidget {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 23.0),
+        padding: const EdgeInsets.symmetric(horizontal: 0.0),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -47,42 +47,51 @@ class HomePage extends StatelessWidget {
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    "Olá, boa noite!",
-                    style: TextStyle(
-                      fontFamily: 'FigTree',
-                      fontWeight: FontWeight.w500,
-                      fontSize: 24,
-                      color: Color(0xffC7411B),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 23.0),
+                    child: Text(
+                      "Olá, boa noite!",
+                      style: TextStyle(
+                        fontFamily: 'FigTree',
+                        fontWeight: FontWeight.w500,
+                        fontSize: 24,
+                        color: Color(0xffC7411B),
+                      ),
                     ),
                   ),
                   const Spacer(),
-                  Container(
-                    width: 58,
-                    height: 56,
-                    decoration: BoxDecoration(
-                      color: const Color(0xffC7411B),
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: Transform.rotate(
-                      angle: 3.14159 / 2,
-                      child: const Icon(
-                        Icons.search,
-                        color: Color(0xffFFFBF6),
-                        size: 30.5,
+                  Padding(
+                    padding: const EdgeInsets.only(right: 23.0),
+                    child: Container(
+                      width: 58,
+                      height: 56,
+                      decoration: BoxDecoration(
+                        color: const Color(0xffC7411B),
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Transform.rotate(
+                        angle: 3.14159 / 2,
+                        child: const Icon(
+                          Icons.search,
+                          color: Color(0xffFFFBF6),
+                          size: 30.5,
+                        ),
                       ),
                     ),
                   ),
                 ],
               ),
               const SizedBox(height: 4),
-              const Text(
-                "Cardápio",
-                style: TextStyle(
-                  fontFamily: 'FigTree',
-                  fontWeight: FontWeight.w400,
-                  fontSize: 20,
-                  color: Color(0xffC7411B),
+              const Padding(
+                padding: EdgeInsets.only(left: 23.0),
+                child: Text(
+                  "Cardápio",
+                  style: TextStyle(
+                    fontFamily: 'FigTree',
+                    fontWeight: FontWeight.w400,
+                    fontSize: 20,
+                    color: Color(0xffC7411B),
+                  ),
                 ),
               ),
               const SizedBox(height: 16),
@@ -91,6 +100,7 @@ class HomePage extends StatelessWidget {
               Container(
                 height: 56,
                 width: 575, // Defina a altura desejada para a ListView
+                margin: const EdgeInsets.only(left: 23.0),
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: <Widget>[
@@ -101,19 +111,22 @@ class HomePage extends StatelessWidget {
                         color: const Color(0xffC7411B),
                         borderRadius: BorderRadius.circular(20),
                       ),
-                        child: const Padding(
-                          padding: EdgeInsets.symmetric(vertical: 16, horizontal: 37.5),
-                          
-                          child: Text(
-                            "Todos",
-                            style: TextStyle(
-                              fontFamily: 'FigTree',
-                              fontWeight: FontWeight.w500,
-                              fontSize: 20,
-                              color: Color(0xffFFFBF6),
-                            ),
-                            ),
+                      child: const Padding(
+                        padding: EdgeInsets.symmetric(
+                            vertical: 16, horizontal: 37.5),
+                        child: Text(
+                          "Todos",
+                          style: TextStyle(
+                            fontFamily: 'FigTree',
+                            fontWeight: FontWeight.w500,
+                            fontSize: 20,
+                            color: Color(0xffFFFBF6),
+                          ),
                         ),
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 17,
                     ),
                     Container(
                       width: 131,
@@ -122,18 +135,22 @@ class HomePage extends StatelessWidget {
                         color: const Color(0xffFFB987),
                         borderRadius: BorderRadius.circular(20),
                       ),
-                        child: const Padding(
-                          padding: EdgeInsets.symmetric(vertical: 16, horizontal: 27),
-                          child: Text(
-                            "Petiscos",
-                            style: TextStyle(
-                              fontFamily: 'FigTree',
-                              fontWeight: FontWeight.w400,
-                              fontSize: 20,
-                              color: Color(0xffC7411B),
-                            ),
+                      child: const Padding(
+                        padding:
+                            EdgeInsets.symmetric(vertical: 16, horizontal: 27),
+                        child: Text(
+                          "Petiscos",
+                          style: TextStyle(
+                            fontFamily: 'FigTree',
+                            fontWeight: FontWeight.w400,
+                            fontSize: 20,
+                            color: Color(0xffC7411B),
                           ),
                         ),
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 17,
                     ),
                     Container(
                       width: 131,
@@ -142,23 +159,43 @@ class HomePage extends StatelessWidget {
                         color: const Color(0xffFFB987),
                         borderRadius: BorderRadius.circular(20),
                       ),
-                        child: const Padding(
-                          padding: EdgeInsets.symmetric(vertical: 17.0, horizontal: 15),
-                          child: Text(
-                            "Sobremesas",
-                            style: TextStyle(
-                              fontFamily: 'FigTree',
-                              fontWeight: FontWeight.w400,
-                              fontSize: 18,
-                              color: Color(0xffC7411B),
-                              
-                            ),
+                      child: const Padding(
+                        padding: EdgeInsets.symmetric(
+                            vertical: 17.0, horizontal: 15),
+                        child: Text(
+                          "Sobremesas",
+                          style: TextStyle(
+                            fontFamily: 'FigTree',
+                            fontWeight: FontWeight.w400,
+                            fontSize: 18,
+                            color: Color(0xffC7411B),
                           ),
                         ),
+                      ),
                     ),
-
                   ],
                 ),
+              ),
+
+              const SizedBox(
+                height: 30,
+              ),
+
+              const Padding(
+                padding: EdgeInsets.only(left: 23.0),
+                child: Text(
+                  "Todos",
+                  style: TextStyle(
+                    fontFamily: 'FigTree',
+                    fontSize: 20,
+                    fontWeight: FontWeight.w400,
+                    color: Color(0xffC7411B),
+                  ),
+                ),
+              ),
+
+              ListView(
+                children: [],
               ),
             ],
           ),
