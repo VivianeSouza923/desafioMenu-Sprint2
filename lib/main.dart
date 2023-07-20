@@ -186,7 +186,7 @@ class HomePage extends StatelessWidget {
                     ),
                     child: const Padding(
                       padding:
-                          EdgeInsets.symmetric(vertical: 17.0, horizontal: 15),
+                          EdgeInsets.symmetric(vertical: 17.0, horizontal: 36),
                       child: Text(
                         "Massas",
                         style: TextStyle(
@@ -211,13 +211,13 @@ class HomePage extends StatelessWidget {
                     ),
                     child: const Padding(
                       padding:
-                          EdgeInsets.symmetric(vertical: 17.0, horizontal: 15),
+                          EdgeInsets.symmetric(vertical: 17.0, horizontal: 35),
                       child: Text(
-                        "Saladas",
+                        "Bebidas",
                         style: TextStyle(
                           fontFamily: 'FigTree',
                           fontWeight: FontWeight.w400,
-                          fontSize: 18,
+                          fontSize: 17,
                           color: Color(0xffC7411B),
                         ),
                       ),
@@ -245,91 +245,138 @@ class HomePage extends StatelessWidget {
             ),
 
             const SizedBox(
-              height: 13,
+              height: 16,
             ),
 
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 36.0),
-              child: Container(
-                width: 344,
-                height: 156,
-                decoration: BoxDecoration(
-                  color: const Color(0xffFFEFDC),
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Row(
-                  children: [
+            Flexible(
+              child: ListView(
+
+                shrinkWrap: true,
+            
+                padding: const EdgeInsets.symmetric(horizontal: 23),
+            
+                scrollDirection: Axis.vertical,
+            
+                children: <Widget>[
+            
                     Container(
-                      margin: const EdgeInsets.only(left: 8, top: 8, bottom: 8),
-                      width: 144,
-                      height: 140,
+                      width: 344,
+                      height: 156,
                       decoration: BoxDecoration(
-                        color: const Color(0xffFFDCBD),
-                        borderRadius: BorderRadius.circular(12),
+                        color: const Color(0xffFFEFDC),
+                        borderRadius: BorderRadius.circular(20),
                       ),
-                      child: const Padding(
-                        padding: EdgeInsets.only(
-                            left: 117.0, top: 8, right: 8, bottom: 113),
-                        child: Icon(
-                          Icons.circle,
-                          size: 19,
-                          color: Color(0xffE45E3A),
-                        ),
+                      child: Row(
+                        children: [
+                          Container(
+                            margin: const EdgeInsets.only(left: 8, top: 8, bottom: 8),
+                            width: 144,
+                            height: 140,
+                            decoration: BoxDecoration(
+                              color: const Color(0xffFFDCBD),
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            child: const Padding(
+                              padding: EdgeInsets.only(
+                                  left: 117.0, top: 8, right: 8, bottom: 113),
+                              child: Icon(
+                                Icons.circle,
+                                size: 19,
+                                color: Color(0xffE45E3A),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 11,
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.only(top: 12, bottom: 125),
+                            child: Text(
+                              "001",
+                              style: TextStyle(
+                                fontFamily: 'FigTree',
+                                fontSize: 16,
+                                fontWeight: FontWeight.w400,
+                                color: Color(0xffC7411B),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 89,
+                          ),
+
+                          const Padding(
+                            padding: EdgeInsets.only(top: 10, bottom: 125),
+                            child: Icon(
+                          
+                              
+                              Icons.av_timer_outlined,
+                              size: 20.95,
+                              color: Color(0xffC7411B),
+                          
+                              
+                          
+                          
+                            ),
+                          ),
+                          
+                          
+                        ],
                       ),
                     ),
-                    const SizedBox(
-                      width: 11,
-                    ),
-                    const Padding(
-                      padding: EdgeInsets.only(top: 12, bottom: 125),
-                      child: Text(
-                        "001",
-                        style: TextStyle(
-                          fontFamily: 'FigTree',
-                          fontSize: 16,
-                          fontWeight: FontWeight.w400,
-                          color: Color(0xffC7411B),
-                        ),
+
+                    const SizedBox(height: 16,),
+            
+              
+            
+                    Container(
+                      width: 344,
+                      height: 156,
+                      decoration: BoxDecoration(
+                        color: const Color(0xffFFEFDC),
+                        borderRadius: BorderRadius.circular(20),
                       ),
                     ),
-                    const SizedBox(
-                      width: 89,
+
+                    const SizedBox(height: 16,),
+                  
+             
+                    Container(
+                      width: 344,
+                      height: 156,
+                      decoration: BoxDecoration(
+                        color: const Color(0xffFFEFDC),
+                        borderRadius: BorderRadius.circular(20),
+                      ),
                     ),
-                    
-                  ],
-                ),
-              ),
-            ),
 
-            const SizedBox(
-              height: 9,
-            ),
+                    const SizedBox(height: 16,),
+                  
+             
+                    Container(
+                      width: 344,
+                      height: 156,
+                      decoration: BoxDecoration(
+                        color: const Color(0xffFFEFDC),
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                    ),
 
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 36),
-              child: Container(
-                width: 344,
-                height: 156,
-                decoration: BoxDecoration(
-                  color: const Color(0xffFFEFDC),
-                  borderRadius: BorderRadius.circular(20),
-                ),
-              ),
-            ),
 
-            const SizedBox(
-              height: 9,
-            ),
+                    const SizedBox(height: 16,),
+                  
+             
+                    Container(
+                      width: 344,
+                      height: 156,
+                      decoration: BoxDecoration(
+                        color: const Color(0xffFFEFDC),
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                    ),
 
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 36.0),
-              child: Container(
-                width: 344,
-                height: 156,
-                decoration: BoxDecoration(
-                  color: const Color(0xffFFEFDC),
-                  borderRadius: BorderRadius.circular(20),
-                ),
+                    const SizedBox(height: 16,),
+                ],
               ),
             ),
           ],
