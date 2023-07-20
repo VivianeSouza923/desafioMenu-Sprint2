@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -99,7 +99,7 @@ class HomePage extends StatelessWidget {
             // CARROSSEL DE TIPOS DE REFEIÇÕES - APENAS UMA LISTVIEW
             Container(
               height: 56,
-              width: 575, // Defina a altura desejada para a ListView
+              width: 1000, // Defina a altura desejada para a ListView
               margin: const EdgeInsets.only(left: 23.0),
               child: ListView(
                 scrollDirection: Axis.horizontal,
@@ -164,6 +164,56 @@ class HomePage extends StatelessWidget {
                           EdgeInsets.symmetric(vertical: 17.0, horizontal: 15),
                       child: Text(
                         "Sobremesas",
+                        style: TextStyle(
+                          fontFamily: 'FigTree',
+                          fontWeight: FontWeight.w400,
+                          fontSize: 18,
+                          color: Color(0xffC7411B),
+                        ),
+                      ),
+                    ),
+                  ),
+
+                  const SizedBox(
+                    width: 17,
+                  ),
+                  Container(
+                    width: 131,
+                    height: 56,
+                    decoration: BoxDecoration(
+                      color: const Color(0xffFFB987),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: const Padding(
+                      padding:
+                          EdgeInsets.symmetric(vertical: 17.0, horizontal: 15),
+                      child: Text(
+                        "Massas",
+                        style: TextStyle(
+                          fontFamily: 'FigTree',
+                          fontWeight: FontWeight.w400,
+                          fontSize: 18,
+                          color: Color(0xffC7411B),
+                        ),
+                      ),
+                    ),
+                  ),
+
+                  const SizedBox(
+                    width: 17,
+                  ),
+                  Container(
+                    width: 131,
+                    height: 56,
+                    decoration: BoxDecoration(
+                      color: const Color(0xffFFB987),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: const Padding(
+                      padding:
+                          EdgeInsets.symmetric(vertical: 17.0, horizontal: 15),
+                      child: Text(
+                        "Saladas",
                         style: TextStyle(
                           fontFamily: 'FigTree',
                           fontWeight: FontWeight.w400,
@@ -245,7 +295,7 @@ class HomePage extends StatelessWidget {
                     const SizedBox(
                       width: 89,
                     ),
-                    Icon(),
+                    
                   ],
                 ),
               ),
