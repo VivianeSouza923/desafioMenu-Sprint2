@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 void main() {
   runApp(const MyApp());
 }
@@ -250,132 +249,147 @@ class HomePage extends StatelessWidget {
 
             Flexible(
               child: ListView(
-
                 shrinkWrap: true,
-            
                 padding: const EdgeInsets.symmetric(horizontal: 23),
-            
                 scrollDirection: Axis.vertical,
-            
                 children: <Widget>[
-            
-                    Container(
-                      width: 344,
-                      height: 156,
-                      decoration: BoxDecoration(
-                        color: const Color(0xffFFEFDC),
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      child: Row(
-                        children: [
-                          Container(
-                            margin: const EdgeInsets.only(left: 8, top: 8, bottom: 8),
-                            width: 144,
-                            height: 140,
-                            decoration: BoxDecoration(
-                              color: const Color(0xffFFDCBD),
-                              borderRadius: BorderRadius.circular(12),
-                            ),
-                            child: const Padding(
-                              padding: EdgeInsets.only(
-                                  left: 117.0, top: 8, right: 8, bottom: 113),
-                              child: Icon(
-                                Icons.circle,
-                                size: 19,
-                                color: Color(0xffE45E3A),
-                              ),
-                            ),
+                  Container(
+                    width: 344,
+                    height: 156,
+                    decoration: BoxDecoration(
+                      color: const Color(0xffFFEFDC),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Row(
+                      children: [
+                        Container(
+                          margin: const EdgeInsets.only(left: 8, top: 8, bottom: 8),
+                          width: 144,
+                          height: 140,
+                          decoration: BoxDecoration(
+                            color: const Color(0xffFFDCBD),
+                            borderRadius: BorderRadius.circular(12),
                           ),
-                          const SizedBox(
-                            width: 11,
-                          ),
-                          const Padding(
-                            padding: EdgeInsets.only(top: 12, bottom: 125),
-                            child: Text(
-                              "001",
-                              style: TextStyle(
-                                fontFamily: 'FigTree',
-                                fontSize: 16,
-                                fontWeight: FontWeight.w400,
-                                color: Color(0xffC7411B),
-                              ),
-                            ),
-                          ),
-                          const SizedBox(
-                            width: 89,
-                          ),
-
-                          const Padding(
-                            padding: EdgeInsets.only(top: 10, bottom: 125),
+                          child: const Padding(
+                            padding: EdgeInsets.only(left: 117.0, top: 8, right: 8, bottom: 113),
                             child: Icon(
-                          
-                              
-                              Icons.av_timer_outlined,
-                              size: 20.95,
-                              color: Color(0xffC7411B),
-                          
-                              
-                          
-                          
+                              Icons.circle,
+                              size: 19,
+                              color: Color(0xffE45E3A),
                             ),
                           ),
-                          
-                          
-                        ],
-                      ),
+                        ),
+                        const Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.only(left: 11, top: 12, bottom: 8),
+                                    child: Text(
+                                      "001",
+                                      style: TextStyle(
+                                        fontFamily: 'FigTree',
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w400,
+                                        color: Color(0xffC7411B),
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.only(left: 89),
+                                    child: Icon(
+                                      Icons.access_time_rounded,
+                                      size: 20.95,
+                                      color: Color(0xffC7411B),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.only(left: 4.08),
+                                    child: Text(
+                                      "15m",
+                                      style: TextStyle(
+                                        fontFamily: 'FigTree',
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w500,
+                                        color: Color(0xffC7411B),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+
+                              Row(
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.only(left:11.0, bottom: 97, right: 74),
+                                    child: Text(
+                                      "Hambúrguer X",
+                                      style: TextStyle(
+                                        fontFamily: 'FigTree',
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w600,
+                                        color: Color(0xffC7411B),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+
+                              
+                            ],
+                          ),
+                        ),
+                      ],
                     ),
+                  ),
 
-                    const SizedBox(height: 16,),
-            
-              
-            
-                    Container(
-                      width: 344,
-                      height: 156,
-                      decoration: BoxDecoration(
-                        color: const Color(0xffFFEFDC),
-                        borderRadius: BorderRadius.circular(20),
-                      ),
+                  const SizedBox(height: 16),
+
+                  Container(
+                    width: 344,
+                    height: 156,
+                    decoration: BoxDecoration(
+                      color: const Color(0xffFFEFDC),
+                      borderRadius: BorderRadius.circular(20),
                     ),
+                  ),
 
-                    const SizedBox(height: 16,),
-                  
-             
-                    Container(
-                      width: 344,
-                      height: 156,
-                      decoration: BoxDecoration(
-                        color: const Color(0xffFFEFDC),
-                        borderRadius: BorderRadius.circular(20),
-                      ),
+                  const SizedBox(height: 16),
+
+                  Container(
+                    width: 344,
+                    height: 156,
+                    decoration: BoxDecoration(
+                      color: const Color(0xffFFEFDC),
+                      borderRadius: BorderRadius.circular(20),
                     ),
+                  ),
 
-                    const SizedBox(height: 16,),
-                  
-             
-                    Container(
-                      width: 344,
-                      height: 156,
-                      decoration: BoxDecoration(
-                        color: const Color(0xffFFEFDC),
-                        borderRadius: BorderRadius.circular(20),
-                      ),
+                  const SizedBox(height: 16),
+
+                  Container(
+                    width: 344,
+                    height: 156,
+                    decoration: BoxDecoration(
+                      color: const Color(0xffFFEFDC),
+                      borderRadius: BorderRadius.circular(20),
                     ),
+                  ),
 
+                  const SizedBox(height: 16),
 
-                    const SizedBox(height: 16,),
-                  
-             
-                    Container(
-                      width: 344,
-                      height: 156,
-                      decoration: BoxDecoration(
-                        color: const Color(0xffFFEFDC),
-                        borderRadius: BorderRadius.circular(20),
-                      ),
+                  Container(
+                    width: 344,
+                    height: 156,
+                    decoration: BoxDecoration(
+                      color: const Color(0xffFFEFDC),
+                      borderRadius: BorderRadius.circular(20),
                     ),
+                  ),
 
-                    const SizedBox(height: 16,),
+                  const SizedBox(height: 16),
                 ],
               ),
             ),
