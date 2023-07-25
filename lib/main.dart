@@ -279,12 +279,12 @@ class HomePage extends StatelessWidget {
                             ),
                           ),
                         ),
-                        const Expanded(
+                         Expanded(
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Row(
-                                children: [
+                                children: const [
                                   Padding(
                                     padding: EdgeInsets.only(left: 11, top: 12, bottom: 8),
                                     child: Text(
@@ -298,7 +298,7 @@ class HomePage extends StatelessWidget {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsets.only(left: 89),
+                                    padding: EdgeInsets.only(left: 112),
                                     child: Icon(
                                       Icons.access_time_rounded,
                                       size: 20.95,
@@ -320,12 +320,40 @@ class HomePage extends StatelessWidget {
                                 ],
                               ),
 
+                              const Expanded(
+                                child: Padding(
+                                  padding: EdgeInsets.only(left:11.0, right: 74, bottom: 10),
+                                  child: Text(
+                                    "Hambúrguer X",
+                                    style: TextStyle(
+                                      fontFamily: 'FigTree',
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w600,
+                                      color: Color(0xffC7411B),
+                                    ),
+                                  ),
+                                ),
+                              ),
+
+                              const Padding(
+                                padding: EdgeInsets.only(left: 11, right: 8, bottom: 25),
+                                child: Text(
+                                  "Pão de brioche torrado, carne\nbovina grelhada, cheddar\nalface, tomate e cebola roxa.",
+                                  style: TextStyle(
+                                    fontFamily: 'FigTree',
+                                    fontSize: 11,
+                                    fontWeight: FontWeight.w400,
+                                    color: Color(0xffC7411B),
+                                  ),
+                                ),
+                              ),
+
                               Row(
-                                children: [
+                                children:   const [
                                   Padding(
-                                    padding: EdgeInsets.only(left:11.0, bottom: 97, right: 74),
+                                    padding: EdgeInsets.only(left: 11.0, right: 86, bottom: 15),
                                     child: Text(
-                                      "Hambúrguer X",
+                                      "R\$ 19,90",
                                       style: TextStyle(
                                         fontFamily: 'FigTree',
                                         fontSize: 16,
@@ -334,8 +362,36 @@ class HomePage extends StatelessWidget {
                                       ),
                                     ),
                                   ),
+                              
+                                  Padding(
+                                    padding: EdgeInsets.only(bottom: 11, right: 5),
+                                    child: Icon(
+                                      Icons.star,
+                                      size: 21,
+                                      color: Color(0xffC7411B),
+                                    ),
+                                  ),
+                              
+                                  Padding(
+                                    padding: EdgeInsets.only(bottom: 11, right: 11),
+                                    child: Text(
+                                  
+                                      "4,5",
+                                      style: TextStyle(
+                                        fontFamily: 'FigTree',
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w600,
+                                        color: Color(0xffC7411B),
+                                      ),
+                                  
+                                    ),
+                                  ),
+                              
+                                  
                                 ],
-                              ),
+                              
+                                
+                              ), 
 
                               
                             ],
@@ -354,16 +410,134 @@ class HomePage extends StatelessWidget {
                       color: const Color(0xffFFEFDC),
                       borderRadius: BorderRadius.circular(20),
                     ),
-                  ),
+                    child: Row(
+                      children: [
+                        Container(
+                          margin: const EdgeInsets.only(left: 8, top: 8, bottom: 8),
+                          width: 144,
+                          height: 140,
+                          decoration: BoxDecoration(
+                            color: const Color(0xffFFDCBD),
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          child: Column(
+                            children: const [
+                              Padding(
+                            padding: EdgeInsets.only(left: 117.0, top: 8, right: 8, bottom: 6),
+                            child: Icon(
+                              Icons.circle,
+                              size: 19,
+                              color: Color(0xffE45E3A),
+                            ),
+                          ),
 
-                  const SizedBox(height: 16),
+                          Padding(
+                            padding: EdgeInsets.only(left: 117.0, right: 8, bottom: 88),
+                            child: Icon(
+                              Icons.circle,
+                              size: 19,
+                              color: Color(0xffE45E3A),
+                            ),
+                          ),
+                            ],
+                          )
+                          
+                        ),
+                         Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Padding(
+                                padding: EdgeInsets.only(left: 11, top: 12, bottom: 8),
+                                child: Text(
+                                  "002",
+                                  style: TextStyle(
+                                    fontFamily: 'FigTree',
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w400,
+                                    color: Color(0xffC7411B),
+                                  ),
+                                ),
+                              ),
 
-                  Container(
-                    width: 344,
-                    height: 156,
-                    decoration: BoxDecoration(
-                      color: const Color(0xffFFEFDC),
-                      borderRadius: BorderRadius.circular(20),
+                              const Expanded(
+                                child: Padding(
+                                  padding: EdgeInsets.only(left:11.0, right: 74, bottom: 10),
+                                  child: Text(
+                                    "Hambúrguer Y",
+                                    style: TextStyle(
+                                      fontFamily: 'FigTree',
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w600,
+                                      color: Color(0xffC7411B),
+                                    ),
+                                  ),
+                                ),
+                              ),
+
+                              const Padding(
+                                padding: EdgeInsets.only(left: 11, right: 8, bottom: 25),
+                                child: Text(
+                                  "Pão de brioche torrado, carne\nbovina grelhada, cheddar\nalface, tomate e cebola roxa.",
+                                  style: TextStyle(
+                                    fontFamily: 'FigTree',
+                                    fontSize: 11,
+                                    fontWeight: FontWeight.w400,
+                                    color: Color(0xffC7411B),
+                                  ),
+                                ),
+                              ),
+
+                              Row(
+                                children:   const [
+                                  Padding(
+                                    padding: EdgeInsets.only(left: 11.0, right: 84, bottom: 15),
+                                    child: Text(
+                                      "R\$ 22,90",
+                                      style: TextStyle(
+                                        fontFamily: 'FigTree',
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w600,
+                                        color: Color(0xffC7411B),
+                                      ),
+                                    ),
+                                  ),
+                              
+                                  Padding(
+                                    padding: EdgeInsets.only(bottom: 11, right: 5),
+                                    child: Icon(
+                                      Icons.star,
+                                      size: 21,
+                                      color: Color(0xffC7411B),
+                                    ),
+                                  ),
+                              
+                                  Padding(
+                                    padding: EdgeInsets.only(bottom: 11, right: 11),
+                                    child: Text(
+                                  
+                                      "4,0",
+                                      style: TextStyle(
+                                        fontFamily: 'FigTree',
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w600,
+                                        color: Color(0xffC7411B),
+                                      ),
+                                  
+                                    ),
+                                  ),
+                              
+                                  
+                                ],
+                              
+                                
+                              ), 
+
+                              
+                            ],
+                          ),
+                        ),
+                      ],
                     ),
                   ),
 
@@ -376,6 +550,121 @@ class HomePage extends StatelessWidget {
                       color: const Color(0xffFFEFDC),
                       borderRadius: BorderRadius.circular(20),
                     ),
+                    child: Row(
+                      children: [
+                        Container(
+                          margin: const EdgeInsets.only(left: 8, top: 8, bottom: 8),
+                          width: 144,
+                          height: 140,
+                          decoration: BoxDecoration(
+                            color: const Color(0xffFFDCBD),
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          child: const Padding(
+                            padding: EdgeInsets.only(left: 117.0, top: 8, right: 8, bottom: 113),
+                            child: Icon(
+                              Icons.circle,
+                              size: 19,
+                              color: Color(0xffE45E3A),
+                            ),
+                          ),
+                        ),
+                         Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Padding(
+                                padding: EdgeInsets.only(left: 11, top: 12, bottom: 8),
+                                child: Text(
+                                  "003",
+                                  style: TextStyle(
+                                    fontFamily: 'FigTree',
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w400,
+                                    color: Color(0xffC7411B),
+                                  ),
+                                ),
+                              ),
+
+                              const Expanded(
+                                child: Padding(
+                                  padding: EdgeInsets.only(left:11.0, right: 74, bottom: 10),
+                                  child: Text(
+                                    "Hambúrguer Z",
+                                    style: TextStyle(
+                                      fontFamily: 'FigTree',
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w600,
+                                      color: Color(0xffC7411B),
+                                    ),
+                                  ),
+                                ),
+                              ),
+
+                              const Padding(
+                                padding: EdgeInsets.only(left: 11, right: 8, bottom: 25),
+                                child: Text(
+                                  "Pão de brioche torrado, carne\nbovina grelhada, cheddar\nalface, tomate e cebola roxa.",
+                                  style: TextStyle(
+                                    fontFamily: 'FigTree',
+                                    fontSize: 11,
+                                    fontWeight: FontWeight.w400,
+                                    color: Color(0xffC7411B),
+                                  ),
+                                ),
+                              ),
+
+                              Row(
+                                children:   const [
+                                  Padding(
+                                    padding: EdgeInsets.only(left: 11.0, right: 84, bottom: 15),
+                                    child: Text(
+                                      "R\$ 25,90",
+                                      style: TextStyle(
+                                        fontFamily: 'FigTree',
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w600,
+                                        color: Color(0xffC7411B),
+                                      ),
+                                    ),
+                                  ),
+                              
+                                  Padding(
+                                    padding: EdgeInsets.only(bottom: 11, right: 5),
+                                    child: Icon(
+                                      Icons.star,
+                                      size: 21,
+                                      color: Color(0xffC7411B),
+                                    ),
+                                  ),
+                              
+                                  Padding(
+                                    padding: EdgeInsets.only(bottom: 11, right: 11),
+                                    child: Text(
+                                  
+                                      "4,0",
+                                      style: TextStyle(
+                                        fontFamily: 'FigTree',
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w600,
+                                        color: Color(0xffC7411B),
+                                      ),
+                                  
+                                    ),
+                                  ),
+                              
+                                  
+                                ],
+                              
+                                
+                              ), 
+
+                              
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
 
                   const SizedBox(height: 16),
@@ -386,6 +675,285 @@ class HomePage extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: const Color(0xffFFEFDC),
                       borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Row(
+                      children: [
+                        Container(
+                          margin: const EdgeInsets.only(left: 8, top: 8, bottom: 8),
+                          width: 144,
+                          height: 140,
+                          decoration: BoxDecoration(
+                            color: const Color(0xffFFDCBD),
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          child: const Padding(
+                            padding: EdgeInsets.only(left: 117.0, top: 8, right: 8, bottom: 113),
+                            child: Icon(
+                              Icons.circle,
+                              size: 19,
+                              color: Color(0xffE45E3A),
+                            ),
+                          ),
+                        ),
+                         Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                children: const [
+                                  Padding(
+                                    padding: EdgeInsets.only(left: 11, top: 12, bottom: 8),
+                                    child: Text(
+                                      "001",
+                                      style: TextStyle(
+                                        fontFamily: 'FigTree',
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w400,
+                                        color: Color(0xffC7411B),
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.only(left: 112),
+                                    child: Icon(
+                                      Icons.access_time_rounded,
+                                      size: 20.95,
+                                      color: Color(0xffC7411B),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.only(left: 4.08),
+                                    child: Text(
+                                      "15m",
+                                      style: TextStyle(
+                                        fontFamily: 'FigTree',
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w500,
+                                        color: Color(0xffC7411B),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+
+                              const Expanded(
+                                child: Padding(
+                                  padding: EdgeInsets.only(left:11.0, right: 74, bottom: 10),
+                                  child: Text(
+                                    "Hambúrguer X",
+                                    style: TextStyle(
+                                      fontFamily: 'FigTree',
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w600,
+                                      color: Color(0xffC7411B),
+                                    ),
+                                  ),
+                                ),
+                              ),
+
+                              const Padding(
+                                padding: EdgeInsets.only(left: 11, right: 8, bottom: 25),
+                                child: Text(
+                                  "Pão de brioche torrado, carne\nbovina grelhada, cheddar\nalface, tomate e cebola roxa.",
+                                  style: TextStyle(
+                                    fontFamily: 'FigTree',
+                                    fontSize: 11,
+                                    fontWeight: FontWeight.w400,
+                                    color: Color(0xffC7411B),
+                                  ),
+                                ),
+                              ),
+
+                              Row(
+                                children:   const [
+                                  Padding(
+                                    padding: EdgeInsets.only(left: 11.0, right: 86, bottom: 15),
+                                    child: Text(
+                                      "R\$ 19,90",
+                                      style: TextStyle(
+                                        fontFamily: 'FigTree',
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w600,
+                                        color: Color(0xffC7411B),
+                                      ),
+                                    ),
+                                  ),
+                              
+                                  Padding(
+                                    padding: EdgeInsets.only(bottom: 11, right: 5),
+                                    child: Icon(
+                                      Icons.star,
+                                      size: 21,
+                                      color: Color(0xffC7411B),
+                                    ),
+                                  ),
+                              
+                                  Padding(
+                                    padding: EdgeInsets.only(bottom: 11, right: 11),
+                                    child: Text(
+                                  
+                                      "4,5",
+                                      style: TextStyle(
+                                        fontFamily: 'FigTree',
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w600,
+                                        color: Color(0xffC7411B),
+                                      ),
+                                  
+                                    ),
+                                  ),
+                              
+                                  
+                                ],
+                              
+                                
+                              ), 
+
+                              
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+
+                  const SizedBox(height: 16),
+
+                   Container(
+                    width: 344,
+                    height: 156,
+                    decoration: BoxDecoration(
+                      color: const Color(0xffFFEFDC),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Row(
+                      children: [
+                        Container(
+                          margin: const EdgeInsets.only(left: 8, top: 8, bottom: 8),
+                          width: 144,
+                          height: 140,
+                          decoration: BoxDecoration(
+                            color: const Color(0xffFFDCBD),
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          child: Column(
+                            children: const [
+                              Padding(
+                            padding: EdgeInsets.only(left: 117.0, top: 8, right: 8, bottom: 6),
+                            child: Icon(
+                              Icons.circle,
+                              size: 19,
+                              color: Color(0xffE45E3A),
+                            ),
+                          ),
+
+                          Padding(
+                            padding: EdgeInsets.only(left: 117.0, right: 8, bottom: 88),
+                            child: Icon(
+                              Icons.circle,
+                              size: 19,
+                              color: Color(0xffE45E3A),
+                            ),
+                          ),
+                            ],
+                          )
+                          
+                        ),
+                         Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Padding(
+                                padding: EdgeInsets.only(left: 11, top: 12, bottom: 8),
+                                child: Text(
+                                  "002",
+                                  style: TextStyle(
+                                    fontFamily: 'FigTree',
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w400,
+                                    color: Color(0xffC7411B),
+                                  ),
+                                ),
+                              ),
+
+                              const Expanded(
+                                child: Padding(
+                                  padding: EdgeInsets.only(left:11.0, right: 74, bottom: 10),
+                                  child: Text(
+                                    "Hambúrguer Y",
+                                    style: TextStyle(
+                                      fontFamily: 'FigTree',
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w600,
+                                      color: Color(0xffC7411B),
+                                    ),
+                                  ),
+                                ),
+                              ),
+
+                              const Padding(
+                                padding: EdgeInsets.only(left: 11, right: 8, bottom: 25),
+                                child: Text(
+                                  "Pão de brioche torrado, carne\nbovina grelhada, cheddar\nalface, tomate e cebola roxa.",
+                                  style: TextStyle(
+                                    fontFamily: 'FigTree',
+                                    fontSize: 11,
+                                    fontWeight: FontWeight.w400,
+                                    color: Color(0xffC7411B),
+                                  ),
+                                ),
+                              ),
+
+                              Row(
+                                children:   const [
+                                  Padding(
+                                    padding: EdgeInsets.only(left: 11.0, right: 84, bottom: 15),
+                                    child: Text(
+                                      "R\$ 22,90",
+                                      style: TextStyle(
+                                        fontFamily: 'FigTree',
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w600,
+                                        color: Color(0xffC7411B),
+                                      ),
+                                    ),
+                                  ),
+                              
+                                  Padding(
+                                    padding: EdgeInsets.only(bottom: 11, right: 5),
+                                    child: Icon(
+                                      Icons.star,
+                                      size: 21,
+                                      color: Color(0xffC7411B),
+                                    ),
+                                  ),
+                              
+                                  Padding(
+                                    padding: EdgeInsets.only(bottom: 11, right: 11),
+                                    child: Text(
+                                  
+                                      "4,0",
+                                      style: TextStyle(
+                                        fontFamily: 'FigTree',
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w600,
+                                        color: Color(0xffC7411B),
+                                      ),
+                                  
+                                    ),
+                                  ),
+                              
+                                  
+                                ],
+                              
+                                
+                              ), 
+
+                              
+                            ],
+                          ),
+                        ),
+                      ],
                     ),
                   ),
 
