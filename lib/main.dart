@@ -40,7 +40,7 @@ class HomePage extends StatelessWidget {
       body: Stack(
         children: [
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 0.0),
+            padding: const EdgeInsets.symmetric(horizontal: 0.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -281,12 +281,12 @@ class HomePage extends StatelessWidget {
                                 ),
                               ),
                             ),
-                            Expanded(
+                            const Expanded(
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Row(
-                                    children: const [
+                                    children: [
                                       Padding(
                                         padding: EdgeInsets.only(
                                             left: 11, top: 12, bottom: 8),
@@ -322,24 +322,22 @@ class HomePage extends StatelessWidget {
                                       ),
                                     ],
                                   ),
-                                  const Expanded(
-                                    child: Padding(
-                                      padding: EdgeInsets.only(
-                                          left: 11.0, right: 74, bottom: 10),
-                                      child: Text(
-                                        "Hambúrguer X",
-                                        style: TextStyle(
-                                          fontFamily: 'FigTree',
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.w600,
-                                          color: Color(0xffC7411B),
-                                        ),
+                                  Padding(
+                                    padding: EdgeInsets.only(
+                                        left: 11.0, right: 74, bottom: 10),
+                                    child: Text(
+                                      "Hambúrguer X",
+                                      style: TextStyle(
+                                        fontFamily: 'FigTree',
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w600,
+                                        color: Color(0xffC7411B),
                                       ),
                                     ),
                                   ),
-                                  const Padding(
+                                  Padding(
                                     padding: EdgeInsets.only(
-                                        left: 11, right: 8, bottom: 25),
+                                        left: 11, right: 8, bottom: 15),
                                     child: Text(
                                       "Pão de brioche torrado, carne\nbovina grelhada, cheddar\nalface, tomate e cebola roxa.",
                                       style: TextStyle(
@@ -351,10 +349,10 @@ class HomePage extends StatelessWidget {
                                     ),
                                   ),
                                   Row(
-                                    children: const [
+                                    children: [
                                       Padding(
                                         padding: EdgeInsets.only(
-                                            left: 11.0, right: 86, bottom: 15),
+                                            left: 11.0, right: 76, bottom: 15),
                                         child: Text(
                                           "R\$ 19,90",
                                           style: TextStyle(
@@ -414,8 +412,8 @@ class HomePage extends StatelessWidget {
                                   color: const Color(0xffFFDCBD),
                                   borderRadius: BorderRadius.circular(12),
                                 ),
-                                child: Column(
-                                  children: const [
+                                child: const Column(
+                                  children: [
                                     Padding(
                                       padding: EdgeInsets.only(
                                           left: 117.0,
@@ -439,11 +437,11 @@ class HomePage extends StatelessWidget {
                                     ),
                                   ],
                                 )),
-                            Expanded(
+                            const Expanded(
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  const Padding(
+                                  Padding(
                                     padding: EdgeInsets.only(
                                         left: 11, top: 12, bottom: 8),
                                     child: Text(
@@ -456,24 +454,22 @@ class HomePage extends StatelessWidget {
                                       ),
                                     ),
                                   ),
-                                  const Expanded(
-                                    child: Padding(
-                                      padding: EdgeInsets.only(
-                                          left: 11.0, right: 74, bottom: 10),
-                                      child: Text(
-                                        "Hambúrguer Y",
-                                        style: TextStyle(
-                                          fontFamily: 'FigTree',
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.w600,
-                                          color: Color(0xffC7411B),
-                                        ),
+                                  Padding(
+                                    padding: EdgeInsets.only(
+                                        left: 11.0, right: 74, bottom: 10),
+                                    child: Text(
+                                      "Hambúrguer Y",
+                                      style: TextStyle(
+                                        fontFamily: 'FigTree',
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w600,
+                                        color: Color(0xffC7411B),
                                       ),
                                     ),
                                   ),
-                                  const Padding(
+                                  Padding(
                                     padding: EdgeInsets.only(
-                                        left: 11, right: 8, bottom: 25),
+                                        left: 11, right: 8, bottom: 15),
                                     child: Text(
                                       "Pão de brioche torrado, carne\nbovina grelhada, cheddar\nalface, tomate e cebola roxa.",
                                       style: TextStyle(
@@ -485,10 +481,10 @@ class HomePage extends StatelessWidget {
                                     ),
                                   ),
                                   Row(
-                                    children: const [
+                                    children: [
                                       Padding(
                                         padding: EdgeInsets.only(
-                                            left: 11.0, right: 84, bottom: 15),
+                                            left: 11.0, right: 74, bottom: 15),
                                         child: Text(
                                           "R\$ 22,90",
                                           style: TextStyle(
@@ -558,11 +554,11 @@ class HomePage extends StatelessWidget {
                                 ),
                               ),
                             ),
-                            Expanded(
+                            const Expanded(
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  const Padding(
+                                  Padding(
                                     padding: EdgeInsets.only(
                                         left: 11, top: 12, bottom: 8),
                                     child: Text(
@@ -575,41 +571,37 @@ class HomePage extends StatelessWidget {
                                       ),
                                     ),
                                   ),
-                                  const Padding(
+                                  Padding(
                                     padding: EdgeInsets.only(
                                         left: 11.0, right: 74, bottom: 10),
-                                    child: Expanded(
-                                      child: Text(
-                                        "Hambúrguer Z",
-                                        style: TextStyle(
-                                          fontFamily: 'FigTree',
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.w600,
-                                          color: Color(0xffC7411B),
-                                        ),
+                                    child: Text(
+                                      "Hambúrguer Z",
+                                      style: TextStyle(
+                                        fontFamily: 'FigTree',
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w600,
+                                        color: Color(0xffC7411B),
                                       ),
                                     ),
                                   ),
-                                  const Padding(
+                                  Padding(
                                     padding: EdgeInsets.only(
-                                        left: 11, right: 8, bottom: 24),
-                                    child: Expanded(
-                                      child: Text(
-                                        "Pão de brioche torrado, carne\nbovina grelhada, cheddar\nalface, tomate e cebola roxa.",
-                                        style: TextStyle(
-                                          fontFamily: 'FigTree',
-                                          fontSize: 11,
-                                          fontWeight: FontWeight.w400,
-                                          color: Color(0xffC7411B),
-                                        ),
+                                        left: 11, right: 8, bottom: 14),
+                                    child: Text(
+                                      "Pão de brioche torrado, carne\nbovina grelhada, cheddar\nalface, tomate e cebola roxa.",
+                                      style: TextStyle(
+                                        fontFamily: 'FigTree',
+                                        fontSize: 11,
+                                        fontWeight: FontWeight.w400,
+                                        color: Color(0xffC7411B),
                                       ),
                                     ),
                                   ),
                                   Row(
-                                    children: const [
+                                    children: [
                                       Padding(
                                         padding: EdgeInsets.only(
-                                            left: 11.0, right: 84, bottom: 15),
+                                            left: 11.0, right: 74, bottom: 15),
                                         child: Text(
                                           "R\$ 25,90",
                                           style: TextStyle(
@@ -679,12 +671,12 @@ class HomePage extends StatelessWidget {
                                 ),
                               ),
                             ),
-                            Expanded(
+                            const Expanded(
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Row(
-                                    children: const [
+                                    children: [
                                       Padding(
                                         padding: EdgeInsets.only(
                                             left: 11, top: 12, bottom: 8),
@@ -720,24 +712,22 @@ class HomePage extends StatelessWidget {
                                       ),
                                     ],
                                   ),
-                                  const Expanded(
-                                    child: Padding(
-                                      padding: EdgeInsets.only(
-                                          left: 11.0, right: 74, bottom: 10),
-                                      child: Text(
-                                        "Hambúrguer X",
-                                        style: TextStyle(
-                                          fontFamily: 'FigTree',
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.w600,
-                                          color: Color(0xffC7411B),
-                                        ),
+                                  Padding(
+                                    padding: EdgeInsets.only(
+                                        left: 11.0, right: 74, bottom: 10),
+                                    child: Text(
+                                      "Hambúrguer X",
+                                      style: TextStyle(
+                                        fontFamily: 'FigTree',
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w600,
+                                        color: Color(0xffC7411B),
                                       ),
                                     ),
                                   ),
-                                  const Padding(
+                                  Padding(
                                     padding: EdgeInsets.only(
-                                        left: 11, right: 8, bottom: 25),
+                                        left: 11, right: 8, bottom: 15),
                                     child: Text(
                                       "Pão de brioche torrado, carne\nbovina grelhada, cheddar\nalface, tomate e cebola roxa.",
                                       style: TextStyle(
@@ -749,10 +739,10 @@ class HomePage extends StatelessWidget {
                                     ),
                                   ),
                                   Row(
-                                    children: const [
+                                    children: [
                                       Padding(
                                         padding: EdgeInsets.only(
-                                            left: 11.0, right: 86, bottom: 15),
+                                            left: 11.0, right: 76, bottom: 15),
                                         child: Text(
                                           "R\$ 19,90",
                                           style: TextStyle(
@@ -812,8 +802,8 @@ class HomePage extends StatelessWidget {
                                   color: const Color(0xffFFDCBD),
                                   borderRadius: BorderRadius.circular(12),
                                 ),
-                                child: Column(
-                                  children: const [
+                                child: const Column(
+                                  children: [
                                     Padding(
                                       padding: EdgeInsets.only(
                                           left: 117.0,
@@ -837,11 +827,11 @@ class HomePage extends StatelessWidget {
                                     ),
                                   ],
                                 )),
-                            Expanded(
+                            const Expanded(
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  const Padding(
+                                  Padding(
                                     padding: EdgeInsets.only(
                                         left: 11, top: 12, bottom: 8),
                                     child: Text(
@@ -854,24 +844,22 @@ class HomePage extends StatelessWidget {
                                       ),
                                     ),
                                   ),
-                                  const Expanded(
-                                    child: Padding(
-                                      padding: EdgeInsets.only(
-                                          left: 11.0, right: 74, bottom: 10),
-                                      child: Text(
-                                        "Hambúrguer Y",
-                                        style: TextStyle(
-                                          fontFamily: 'FigTree',
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.w600,
-                                          color: Color(0xffC7411B),
-                                        ),
+                                  Padding(
+                                    padding: EdgeInsets.only(
+                                        left: 11.0, right: 74, bottom: 10),
+                                    child: Text(
+                                      "Hambúrguer Y",
+                                      style: TextStyle(
+                                        fontFamily: 'FigTree',
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w600,
+                                        color: Color(0xffC7411B),
                                       ),
                                     ),
                                   ),
-                                  const Padding(
+                                  Padding(
                                     padding: EdgeInsets.only(
-                                        left: 11, right: 8, bottom: 25),
+                                        left: 11, right: 8, bottom: 15),
                                     child: Text(
                                       "Pão de brioche torrado, carne\nbovina grelhada, cheddar\nalface, tomate e cebola roxa.",
                                       style: TextStyle(
@@ -883,10 +871,10 @@ class HomePage extends StatelessWidget {
                                     ),
                                   ),
                                   Row(
-                                    children: const [
+                                    children: [
                                       Padding(
                                         padding: EdgeInsets.only(
-                                            left: 11.0, right: 84, bottom: 15),
+                                            left: 11.0, right: 74, bottom: 15),
                                         child: Text(
                                           "R\$ 22,90",
                                           style: TextStyle(
