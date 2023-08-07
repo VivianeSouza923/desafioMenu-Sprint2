@@ -51,6 +51,26 @@ class ClientScreen extends StatelessWidget {
         ),
         
       ),
+
+      body:  Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(top: 20, right: 16, left: 26.5),
+            child: Container(
+              width: 358,
+              height: 348.06,
+          
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(25),
+                image: const DecorationImage(
+                  image:AssetImage("assets/images/hamburguerx.jpeg"),
+                  fit: BoxFit.cover,
+              ),
+            ),
+            ),
+          ),
+        ],
+      ),
      
     );
   }
