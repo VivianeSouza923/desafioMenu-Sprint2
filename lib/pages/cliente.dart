@@ -1,6 +1,7 @@
 
 // ignore_for_file: unused_import
 
+import 'package:desafiomenu_spring2/pages/menu.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:flutter/material.dart';
 
@@ -28,6 +29,24 @@ class ClientScreen extends StatelessWidget {
         backgroundColor: const Color(0xffFF6130),
         toolbarHeight: 75,
 
+
+        leading:  Builder(
+          builder: (BuildContext context) {
+          return IconButton(
+          icon: const Icon(Icons.arrow_back_ios_new_outlined),
+          iconSize: 24,
+          color: const Color(0xffF2F2F7),
+          onPressed: () { 
+            
+            if (Navigator.canPop(context)) {
+              Navigator.pop(context); // Volta à tela anterior
+            }
+          },
+         tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
+          );
+          },
+        ),
+
         title:  const Padding(
           padding: EdgeInsets.only(left: 34.0, right: 103),
           child: Text(
@@ -42,21 +61,31 @@ class ClientScreen extends StatelessWidget {
             ),
         ),
 
-        leading: Padding(
+
+
+
+        /*leading: Padding(
           padding: const EdgeInsets.only(right: 64),
           child: IconButton(
             iconSize: 30,
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => HomePage()),
+            );
+            },
             icon: const Icon(
         
               Icons.arrow_back_ios_new_outlined,
             )
             ),
-        ),
+        ),*/
         
       ),
 
-      body:  SingleChildScrollView(
+      body:  Stack(
+        children: [
+          SingleChildScrollView(
         child: Column(
           children: [
             Padding(
@@ -253,6 +282,43 @@ class ClientScreen extends StatelessWidget {
       
           ],
         ),
+
+        
+      ),
+
+       // botão flutuante
+      Positioned(
+        width: 101,
+        height: 101,
+        
+        
+        right: 31,
+        bottom: 29,
+        
+
+        child: FloatingActionButton(
+            backgroundColor: const Color(0xffFF6130),
+            elevation: 5,
+            onPressed: () {},
+            child: const DecoratedBox(
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+              ),
+              child: Icon(
+              Icons.room_service_outlined,
+              color: Color(0xffF2F2F7),
+              size: 50,
+              
+              
+                          ),
+              ),
+              
+            ),
+        ),
+
+     
+
+        ],
       ),
      
     );
