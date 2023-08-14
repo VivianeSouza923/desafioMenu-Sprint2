@@ -30,8 +30,8 @@ class RestaurantScreen extends StatelessWidget {
 
         leading:  Builder(
           builder: (BuildContext context) {
-          return Align(
-            alignment: Alignment.centerLeft,
+          return Padding(
+            padding: const EdgeInsets.only(left: 24.0, right: 63),
             child: IconButton(
             icon: const Icon(Icons.arrow_back_ios_new_outlined),
             color: const Color(0xffFFFFFF),
@@ -43,29 +43,27 @@ class RestaurantScreen extends StatelessWidget {
           },
         ),
         backgroundColor: const Color(0xffC7411B),
-        title: const Center(
-          child: Padding(
-            padding: EdgeInsets.only(right: 118.0, left: 52),
-            child: Text(
-              "Cardápio web",
-              style: TextStyle(
-                fontFamily: 'FigTree',
-                fontSize: 24,
-                color: Color(0xffFFFFFF),
-                fontWeight: FontWeight.w600,
-              ),
+        title: const Padding(
+          padding: EdgeInsets.only(right: 118.0, left: 63),
+          child: Text(
+            "Cardápio web",
+            style: TextStyle(
+              fontFamily: 'FigTree',
+              fontSize: 24,
+              color: Color(0xffFFFFFF),
+              fontWeight: FontWeight.w600,
             ),
           ),
         ),
       ),
 
 
-      body: const Column(
-        children: [
+      body:  Column(
+        children:  [
 
-          Expanded(
+          const Expanded(
             child: Padding(
-              padding: EdgeInsets.only(top: 32.0, left: 24),
+              padding: EdgeInsets.only(top: 32.0, left: 24, right: 239, bottom: 24),
               child: Text(
                 "Novo item",
                 style: TextStyle(
@@ -77,7 +75,24 @@ class RestaurantScreen extends StatelessWidget {
                 ),
                 ),
             ),
+          ),
+
+
+            Padding(
+              padding: const EdgeInsets.only(top: 24.0),
+              child: Container(
+                width: 342,
+                height: 119, 
+            
+            
+                decoration: BoxDecoration(
+                  color: Color(0xffFFEFDC),
+                  borderRadius: BorderRadius.circular(10)
+                ),
+            
+                //child: ,
               ),
+            )
 
 
 

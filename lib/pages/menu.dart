@@ -275,12 +275,12 @@ class HomePage extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                              const Expanded(
+                               Expanded(
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Row(
-                                      children: [
+                                      children: const [
                                         Padding(
                                           padding: EdgeInsets.only(
                                               left: 11, top: 12, bottom: 8),
@@ -316,7 +316,7 @@ class HomePage extends StatelessWidget {
                                         ),
                                       ],
                                     ),
-                                    Padding(
+                                    const Padding(
                                       padding: EdgeInsets.only(
                                           left: 11.0, right: 74, bottom: 10),
                                       child: Text(
@@ -329,7 +329,7 @@ class HomePage extends StatelessWidget {
                                         ),
                                       ),
                                     ),
-                                    Padding(
+                                    const Padding(
                                       padding: EdgeInsets.only(
                                           left: 11, right: 8, bottom: 15),
                                       child: Text(
@@ -343,7 +343,7 @@ class HomePage extends StatelessWidget {
                                       ),
                                     ),
                                     Row(
-                                      children: [
+                                      children: const [
                                         Padding(
                                           padding: EdgeInsets.only(
                                               left: 11.0, right: 76, bottom: 15),
@@ -407,8 +407,8 @@ class HomePage extends StatelessWidget {
                                   color: const Color(0xffFFDCBD),
                                   borderRadius: BorderRadius.circular(12),
                                 ),
-                                child: const Column(
-                                  children: [
+                                child:  Column(
+                                  children: const [
                                     Padding(
                                       padding: EdgeInsets.only(
                                           left: 117.0,
@@ -432,11 +432,11 @@ class HomePage extends StatelessWidget {
                                     ),
                                   ],
                                 )),
-                            const Expanded(
+                             Expanded(
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Padding(
+                                  const Padding(
                                     padding: EdgeInsets.only(
                                         left: 11, top: 12, bottom: 8),
                                     child: Text(
@@ -449,7 +449,7 @@ class HomePage extends StatelessWidget {
                                       ),
                                     ),
                                   ),
-                                  Padding(
+                                  const Padding(
                                     padding: EdgeInsets.only(
                                         left: 11.0, right: 74, bottom: 10),
                                     child: Text(
@@ -462,7 +462,7 @@ class HomePage extends StatelessWidget {
                                       ),
                                     ),
                                   ),
-                                  Padding(
+                                  const Padding(
                                     padding: EdgeInsets.only(
                                         left: 11, right: 8, bottom: 15),
                                     child: Text(
@@ -476,7 +476,7 @@ class HomePage extends StatelessWidget {
                                     ),
                                   ),
                                   Row(
-                                    children: [
+                                    children: const [
                                       Padding(
                                         padding: EdgeInsets.only(
                                             left: 11.0, right: 74, bottom: 15),
@@ -549,11 +549,11 @@ class HomePage extends StatelessWidget {
                                 ),
                               ),
                             ),
-                            const Expanded(
+                             Expanded(
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Padding(
+                                  const Padding(
                                     padding: EdgeInsets.only(
                                         left: 11, top: 12, bottom: 8),
                                     child: Text(
@@ -566,7 +566,7 @@ class HomePage extends StatelessWidget {
                                       ),
                                     ),
                                   ),
-                                  Padding(
+                                  const Padding(
                                     padding: EdgeInsets.only(
                                         left: 11.0, right: 74, bottom: 10),
                                     child: Text(
@@ -579,7 +579,7 @@ class HomePage extends StatelessWidget {
                                       ),
                                     ),
                                   ),
-                                  Padding(
+                                  const Padding(
                                     padding: EdgeInsets.only(
                                         left: 11, right: 8, bottom: 14),
                                     child: Text(
@@ -593,7 +593,7 @@ class HomePage extends StatelessWidget {
                                     ),
                                   ),
                                   Row(
-                                    children: [
+                                    children: const [
                                       Padding(
                                         padding: EdgeInsets.only(
                                             left: 11.0, right: 74, bottom: 15),
@@ -666,12 +666,12 @@ class HomePage extends StatelessWidget {
                                 ),
                               ),
                             ),
-                            const Expanded(
+                             Expanded(
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Row(
-                                    children: [
+                                    children: const [
                                       Padding(
                                         padding: EdgeInsets.only(
                                             left: 11, top: 12, bottom: 8),
@@ -707,7 +707,7 @@ class HomePage extends StatelessWidget {
                                       ),
                                     ],
                                   ),
-                                  Padding(
+                                  const Padding(
                                     padding: EdgeInsets.only(
                                         left: 11.0, right: 74, bottom: 10),
                                     child: Text(
@@ -720,7 +720,7 @@ class HomePage extends StatelessWidget {
                                       ),
                                     ),
                                   ),
-                                  Padding(
+                                  const Padding(
                                     padding: EdgeInsets.only(
                                         left: 11, right: 8, bottom: 15),
                                     child: Text(
@@ -734,7 +734,7 @@ class HomePage extends StatelessWidget {
                                     ),
                                   ),
                                   Row(
-                                    children: [
+                                    children: const [
                                       Padding(
                                         padding: EdgeInsets.only(
                                             left: 11.0, right: 76, bottom: 15),
@@ -797,8 +797,8 @@ class HomePage extends StatelessWidget {
                                   color: const Color(0xffFFDCBD),
                                   borderRadius: BorderRadius.circular(12),
                                 ),
-                                child: const Column(
-                                  children: [
+                                child:  Column(
+                                  children: const [
                                     Padding(
                                       padding: EdgeInsets.only(
                                           left: 117.0,
@@ -822,11 +822,11 @@ class HomePage extends StatelessWidget {
                                     ),
                                   ],
                                 )),
-                            const Expanded(
+                             Expanded(
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Padding(
+                                  const Padding(
                                     padding: EdgeInsets.only(
                                         left: 11, top: 12, bottom: 8),
                                     child: Text(
@@ -839,7 +839,7 @@ class HomePage extends StatelessWidget {
                                       ),
                                     ),
                                   ),
-                                  Padding(
+                                  const Padding(
                                     padding: EdgeInsets.only(
                                         left: 11.0, right: 74, bottom: 10),
                                     child: Text(
@@ -852,7 +852,7 @@ class HomePage extends StatelessWidget {
                                       ),
                                     ),
                                   ),
-                                  Padding(
+                                  const Padding(
                                     padding: EdgeInsets.only(
                                         left: 11, right: 8, bottom: 15),
                                     child: Text(
@@ -866,7 +866,7 @@ class HomePage extends StatelessWidget {
                                     ),
                                   ),
                                   Row(
-                                    children: [
+                                    children: const [
                                       Padding(
                                         padding: EdgeInsets.only(
                                             left: 11.0, right: 74, bottom: 15),
