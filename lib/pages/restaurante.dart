@@ -1,10 +1,8 @@
-
 // ignore_for_file: unused_import
 
 import 'package:desafiomenu_spring2/pages/menu.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:flutter/material.dart';
-
 
 class Restaurant extends StatelessWidget {
   const Restaurant({Key? key}) : super(key: key);
@@ -24,22 +22,21 @@ class RestaurantScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       appBar: AppBar(
-        toolbarHeight: 75, // Defina a altura desejada aqui
+        //toolbarHeight: 75, // Defina a altura desejada aqui
 
-        leading:  Builder(
+        leading: Builder(
           builder: (BuildContext context) {
-          return Padding(
-            padding: const EdgeInsets.only(left: 24.0, right: 63),
-            child: IconButton(
-            icon: const Icon(Icons.arrow_back_ios_new_outlined),
-            color: const Color(0xffFFFFFF),
-            iconSize: 30,
-            onPressed: () {},
-                   tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
-            ),
-          );
+            return Padding(
+              padding: const EdgeInsets.only(left: 24.0, right: 63),
+              child: IconButton(
+                icon: const Icon(Icons.arrow_back_ios_new_outlined),
+                color: const Color(0xffFFFFFF),
+                iconSize: 30,
+                onPressed: () {},
+                tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
+              ),
+            );
           },
         ),
         backgroundColor: const Color(0xffC7411B),
@@ -56,49 +53,62 @@ class RestaurantScreen extends StatelessWidget {
           ),
         ),
       ),
-
-
-      body:  Column(
-        children:  [
-
-          const Expanded(
-            child: Padding(
-              padding: EdgeInsets.only(top: 32.0, left: 24, right: 239, bottom: 24),
-              child: Text(
-                "Novo item",
-                style: TextStyle(
-                  fontFamily: 'FigTree',
-                  fontWeight: FontWeight.w500,
-                  fontSize: 24,
-                  color: Color(0xffC7411B),
-                  
-                ),
-                ),
+      body: Column(
+        children: [
+          const Padding(
+            padding:
+                EdgeInsets.only(top: 32.0, left: 24, right: 239, bottom: 24),
+            child: Text(
+              "Novo item",
+              style: TextStyle(
+                fontFamily: 'FigTree',
+                fontWeight: FontWeight.w500,
+                fontSize: 24,
+                color: Color(0xffC7411B),
+              ),
             ),
           ),
-
-
-            Padding(
-              padding: const EdgeInsets.only(top: 24.0),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.only(left: 24, right: 24, bottom: 578),
               child: Container(
-                width: 342,
-                height: 119, 
-            
-            
-                decoration: BoxDecoration(
-                  color: Color(0xffFFEFDC),
-                  borderRadius: BorderRadius.circular(10)
-                ),
-            
-                //child: ,
-              ),
-            )
-
-
-
+                  width: 342,
+                  height: 119,
+                  decoration: BoxDecoration(
+                      color: const Color(0xffFFEFDC),
+                      borderRadius: BorderRadius.circular(10)),
+                  child: Column(
+                    children: const [
+                      Padding(
+                        padding:
+                            EdgeInsets.only(top: 42.0, left: 95, right: 96),
+                        child: Expanded(
+                          child: Text(
+                            "Foto",
+                            style: TextStyle(
+                              fontFamily: 'FigTree',
+                              fontSize: 16,
+                              fontWeight: FontWeight.w400,
+                              color: Color(0xffFFB987),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        child: Padding(
+                          padding: EdgeInsets.only(bottom: 42.0),
+                          child: Icon(
+                            Icons.upload,
+                            color: Color(0xffFFB987),
+                          ),
+                        ),
+                      )
+                    ],
+                  )),
+            ),
+          )
         ],
       ),
-     
     );
   }
 }
