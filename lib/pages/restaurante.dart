@@ -32,7 +32,6 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
 
   bool showNomeIcon = false;
   bool showCodigoIcon = false;
-  bool showPrecoIcon = false;
   bool showDescricaoIcon = false;
   bool showCategoriasIcon = false;
 
@@ -61,11 +60,6 @@ codigoController.addListener(() {
   });
 });
 
-precoController.addListener(() {
-  setState(() {
-    showPrecoIcon = precoController.text.isNotEmpty;
-  });
-});
 
 descricaoController.addListener(() {
   setState(() {
@@ -285,55 +279,71 @@ Padding(
           ),
 
 
-          Padding(
-            padding: const EdgeInsets.only(top: 16.0, left: 24, right: 24),
-            child: Container(
-              width: 342,
-              height: 40,
-              decoration: BoxDecoration(
-                color: const Color(0xffFFEFDC),
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Row(
+Padding(
+  padding: const EdgeInsets.only(top: 16.0, left: 24, right: 24),
+  child: Container(
+    width: 342,
+    height: 40,
+    decoration: BoxDecoration(
+      color: const Color(0xffFFEFDC),
+      borderRadius: BorderRadius.circular(10),
+    ),
+    child: Row(
       children: [
-        Padding(
-          padding: const EdgeInsets.only(left: 12),
-          child: Visibility(
-            visible: showPrecoIcon,
-            child: const Icon(
-              Icons.tag,
-              size: 14,
-              color: Color(0xffFFB987),
-            ),
+        Container(
+          padding: const EdgeInsets.only(left: 8.0, right: 8.0),
+          child: AnimatedOpacity(
+            opacity: precoController.text.isEmpty ? 1.0 : 0.0,
+            duration: const Duration(milliseconds: 200),
+            child: Text("R\$"),
           ),
         ),
-        const SizedBox(width: 8), // Espaçamento entre o ícone e o TextField
+        const SizedBox(width: 8),
         Expanded(
-          child: TextField(
-            style: const TextStyle(
-              fontFamily: 'FigTree',
-              fontWeight: FontWeight.w400,
-              fontSize: 16,
-              color: Color(0xffC7411B),
-            ),
-            controller: precoController,
-            decoration: const InputDecoration(
-              hintText: "Preço",
-              hintStyle: TextStyle(
-                fontFamily: 'FigTree',
-                fontSize: 16,
-                fontWeight: FontWeight.w400,
-                color: Color(0xffFFB987),
+          child: Stack(
+            children: [
+              TextField(
+                style: const TextStyle(
+                  fontFamily: 'FigTree',
+                  fontWeight: FontWeight.w400,
+                  fontSize: 16,
+                  color: Color(0xffC7411B),
+                ),
+                controller: precoController,
+                decoration: const InputDecoration(
+                  hintText: "Preço",
+                  hintStyle: TextStyle(
+                    fontFamily: 'FigTree',
+                    fontSize: 16,
+                    fontWeight: FontWeight.w400,
+                    color: Color(0xffFFB987),
+                  ),
+                  border: InputBorder.none,
+                  contentPadding: EdgeInsets.only(left: 6),
+                ),
               ),
-              border: InputBorder.none,
-              contentPadding: EdgeInsets.only(left: -4), // Ajuste o valor conforme necessário
-            ),
+              Positioned(
+                left: 8,
+                top: 0,
+                bottom: 0,
+                child: Opacity(
+                  opacity: precoController.text.isEmpty ? 0.0 : 1.0,
+                  child: Text("R\$"),
+                ),
+              ),
+            ],
           ),
         ),
       ],
     ),
-            ),
-          ),
+  ),
+),
+
+
+
+
+
+
 
 
           Padding(
