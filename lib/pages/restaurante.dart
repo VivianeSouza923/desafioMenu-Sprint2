@@ -1,7 +1,9 @@
+import 'package:desafiomenu_spring2/pages/menu.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 import 'dart:math';
+import 'package:desafiomenu_spring2/models/items.dart';
 
 class Restaurant extends StatelessWidget {
   const Restaurant({Key? key}) : super(key: key);
@@ -29,6 +31,8 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
   final TextEditingController precoController = TextEditingController();
   final TextEditingController descricaoController = TextEditingController();
   final TextEditingController categoriasController = TextEditingController();
+
+  List<Items> itens = [];
 
   bool showNomeIcon = false;
   bool showCodigoIcon = false;
@@ -359,9 +363,9 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
                             ),
                             child: ScrollbarTheme(
                               data: ScrollbarThemeData(
-              thumbColor: MaterialStateProperty.all<Color>(
-                  Color(0xffFFB987)), // Cor do polegar da barra de rolagem
-            ),
+                                thumbColor: MaterialStateProperty.all<Color>(Color(
+                                    0xffFFB987)), // Cor do polegar da barra de rolagem
+                              ),
                               child: Column(
                                 children: [
                                   Row(
@@ -606,6 +610,37 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
                           ],
                         ),
                         InkWell(
+                          onTap: () {
+                            String text = nomeController.text;
+                            String text1 = codigoController.text;
+                            String text2 = precoController.text;
+                            String text3 = descricaoController.text;
+                            String text4 = categoriasController.text;
+
+                            setState(() {
+                              Items newItems = Items(
+                                nome: text,
+                                codigo: text1,
+                                preco: text2,
+                                descricao: text3,
+                                categorias: text4,
+                              );
+                              itens.add(newItems);
+                            });
+                            //limpar o campo após adicionar o item
+                            nomeController.clear();
+                            codigoController.clear();
+                            precoController.clear();
+                            descricaoController.clear();
+                            categoriasController.clear();
+
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const HomePage(),
+                              ),
+                            );
+                          },
                           child: Padding(
                             padding: const EdgeInsets.only(
                                 top: 32.0, left: 24, right: 24, bottom: 24),
