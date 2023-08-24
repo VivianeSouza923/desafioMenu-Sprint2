@@ -1,4 +1,3 @@
-import 'package:desafiomenu_spring2/pages/menu_com_listview_normal.dart';
 import 'package:desafiomenu_spring2/pages/restaurante.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage1(),
+      home: RestaurantScreen(),
     );
   }
 }

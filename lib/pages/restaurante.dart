@@ -5,6 +5,7 @@ import 'dart:io';
 import 'dart:math';
 import 'package:desafiomenu_spring2/models/items.dart';
 
+
 class Restaurant extends StatelessWidget {
   const Restaurant({Key? key}) : super(key: key);
 
@@ -132,16 +133,16 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
           ),
           ScrollbarTheme(
             data: ScrollbarThemeData(
-              thumbColor: MaterialStateProperty.all<Color>(
-                  Color(0xffFFB987)), // Cor do polegar da barra de rolagem
+              thumbColor: MaterialStateProperty.all<Color>(const Color(
+                  0xffFFB987)), // Cor do polegar da barra de rolagem
             ),
             child: Flexible(
-              child: Container(
+              child: SizedBox(
                 height: 548,
                 child: Scrollbar(
-                  isAlwaysShown: true,
+                  thumbVisibility: true,
                   thickness: 6.0,
-                  radius: Radius.circular(8.0),
+                  radius: const Radius.circular(8.0),
                   child: Flexible(
                     child: ListView(
                       shrinkWrap: true,
@@ -363,8 +364,9 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
                             ),
                             child: ScrollbarTheme(
                               data: ScrollbarThemeData(
-                                thumbColor: MaterialStateProperty.all<Color>(Color(
-                                    0xffFFB987)), // Cor do polegar da barra de rolagem
+                                thumbColor: MaterialStateProperty.all<Color>(
+                                  const Color(0xffFFB987),
+                                ), // Cor do polegar da barra de rolagem
                               ),
                               child: Column(
                                 children: [
@@ -611,33 +613,36 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
                         ),
                         InkWell(
                           onTap: () {
-                            String text = nomeController.text;
-                            String text1 = codigoController.text;
-                            String text2 = precoController.text;
-                            String text3 = descricaoController.text;
-                            String text4 = categoriasController.text;
 
-                            setState(() {
-                              Items newItems = Items(
-                                nome: text,
-                                codigo: text1,
-                                preco: text2,
-                                descricao: text3,
-                                categorias: text4,
-                              );
-                              itens.add(newItems);
-                            });
-                            //limpar o campo após adicionar o item
-                            nomeController.clear();
-                            codigoController.clear();
-                            precoController.clear();
-                            descricaoController.clear();
-                            categoriasController.clear();
+                             String nome = nomeController.text;
+    String codigo = codigoController.text;
+    String preco = precoController.text;
+    String descricao = descricaoController.text;
+    String categorias = categoriasController.text;
+                   
+       setState(() {
+      Items newItem = Items(
+        nome: nome,
+        codigo: codigo,
+        preco: preco,
+        descricao: descricao,
+        categorias: categorias,
+      );
+      itens.add(newItem);
+
+      // Limpar os campos após adicionar o item
+      nomeController.clear();
+      codigoController.clear();
+      precoController.clear();
+      descricaoController.clear();
+      categoriasController.clear();
+    });
 
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => const HomePage(),
+                                builder: (context) => HomePage(
+                                  nomeController: nomeController, descricaoController: descricaoController, precoController: precoController, codigoController: codigoController, itens: const [],),
                               ),
                             );
                           },

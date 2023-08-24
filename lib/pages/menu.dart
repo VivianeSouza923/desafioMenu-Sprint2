@@ -1,12 +1,23 @@
-import 'package:desafiomenu_spring2/pages/cliente.dart';
 import 'package:flutter/material.dart';
 
 import '../models/Items.dart';
 import '../widgets/itens_list.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  final TextEditingController nomeController;
+  final TextEditingController descricaoController;
+  final TextEditingController precoController;
+  final TextEditingController codigoController;
+  final List<Items> itens;
 
+  const HomePage(
+      {Key? key,
+      required this.nomeController,
+      required this.descricaoController,
+      required this.precoController,
+      required this.codigoController,
+      required this.itens})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +25,7 @@ class HomePage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 75, // Defina a altura desejada aqui
+        //toolbarHeight: 75, // Defina a altura desejada aqui
         backgroundColor: const Color(0xffC7411B),
         title: const Center(
           child: Text(
@@ -238,57 +249,45 @@ class HomePage extends StatelessWidget {
                   height: 16,
                 ),
 
-                Flexible(
+                Expanded(
                   child: ListView(
                     shrinkWrap: true,
                     padding: const EdgeInsets.symmetric(horizontal: 23),
-                    scrollDirection: Axis.vertical,
-                    children: <Widget>[
-                      const SizedBox(height: 16),
-                      Container(
-                        width: 344,
-                        height: 156,
-                        decoration: BoxDecoration(
-                          color: const Color(0xffFFEFDC),
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: Row(
-                          children: [
-                            for (Items item in itens)
+                    //scrollDirection: Axis.vertical,
 
-                              //É UM ITEM DA SUA LISTA
-                              /*ListTile(
-                          title: Text(tarefa),
-                          subtitle: Text(
-                              'Data: ${dataAtual.day}/${dataAtual.month}/${dataAtual.year}'),
-                          leading: const Icon(Icons.edit),
-                          onTap: () {
-                            print("Tarefa: $tarefa");
-                          },
-                        ),*/
-
-                              ItemsListItem(
-                                item: item,
-                              ),
-                          ],
+                    children: [
+                      for (Items item in itens)
+                        ItemsListItem(
+                          codigoController: codigoController,
+                          descricaoController: descricaoController,
+                          itens: [],
+                          nomeController: nomeController,
+                          precoController: precoController,
                         ),
-                      ),
                     ],
                   ),
                 ),
 
+                const SizedBox(
+                  height: 84,
+                ),
+
+                //SizedBox(width: 256,),
+
                 // botão flutuante
-                Positioned(
-                  bottom: 30,
-                  right: 30,
-                  width: 101,
-                  height: 101,
-                  child: FloatingActionButton(
-                    backgroundColor: const Color(0xffFFB987),
-                    onPressed: () {},
-                    child: const DecoratedBox(
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
+                Align(
+                  alignment: Alignment.bottomLeft,
+                  //padding: const EdgeInsets.only(left: 319.0, bottom: 31),
+                  child: Positioned(
+                    width: 101,
+                    height: 101,
+                    child: FloatingActionButton(
+                      backgroundColor: const Color(0xffFFB987),
+                      onPressed: () {},
+                      child: const DecoratedBox(
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                        ),
                       ),
                     ),
                   ),
