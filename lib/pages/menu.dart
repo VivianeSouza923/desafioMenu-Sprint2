@@ -21,8 +21,6 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<Items> itens = [];
-
     return Scaffold(
       appBar: AppBar(
         //toolbarHeight: 75, // Defina a altura desejada aqui
@@ -250,22 +248,28 @@ class HomePage extends StatelessWidget {
                 ),
 
                 Expanded(
-                  child: ListView(
-                    shrinkWrap: true,
-                    padding: const EdgeInsets.symmetric(horizontal: 23),
-                    //scrollDirection: Axis.vertical,
+                  child: ListView.builder(
+                      itemCount: itens.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        shrinkWrap:
+                        true;
+                        padding:
+                        const EdgeInsets.symmetric(horizontal: 23);
+                        //scrollDirection: Axis.vertical,
 
-                    children: [
-                      for (Items item in itens)
+                        return ListTile(
+                          title: Text(itens[index].nome),
+                          subtitle: Text(itens[index].descricao),
+                        );
+                        /*for (Items item in itens)
                         ItemsListItem(
                           codigoController: codigoController,
                           descricaoController: descricaoController,
                           itens: [],
                           nomeController: nomeController,
                           precoController: precoController,
-                        ),
-                    ],
-                  ),
+                        ),*/
+                      }),
                 ),
 
                 const SizedBox(
