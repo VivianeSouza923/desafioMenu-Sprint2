@@ -262,7 +262,7 @@ class ClientScreen extends StatelessWidget {
             ),
 
             const Padding(
-              padding: EdgeInsets.only(top: 12.0, left: 16, bottom: 120, right:60),
+              padding: EdgeInsets.only(top: 12.0, left: 16, bottom: 40, right:60),
               child: Text(
                 
                 "O Hambúrguer X é feito com um suculento\npão de brioche torrado, um hambúrguer\nsuculento de carne bovina grelhado no\nponto perfeito, queijo cheddar derretido,\nalface fresca e crocante, tomate maduro\ne fatias de cebola roxa crocante.",

@@ -1,4 +1,4 @@
-import 'package:desafiomenu_spring2/models/Items.dart';
+/*
 import 'package:flutter/material.dart';
 
 class ItemsListItem extends StatelessWidget {
@@ -121,3 +121,4 @@ class ItemsListItem extends StatelessWidget {
     );
   }
 }
+*/

@@ -1,29 +1,14 @@
+import 'package:desafiomenu_spring2/pages/cliente.dart';
 import 'package:flutter/material.dart';
 
-import '../models/Items.dart';
-import '../widgets/itens_list.dart';
-
 class HomePage extends StatelessWidget {
-  final TextEditingController nomeController;
-  final TextEditingController descricaoController;
-  final TextEditingController precoController;
-  final TextEditingController codigoController;
-  final List<Items> itens;
-
-  const HomePage(
-      {Key? key,
-      required this.nomeController,
-      required this.descricaoController,
-      required this.precoController,
-      required this.codigoController,
-      required this.itens})
-      : super(key: key);
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        //toolbarHeight: 75, // Defina a altura desejada aqui
+        toolbarHeight: 75, // Defina a altura desejada aqui
         backgroundColor: const Color(0xffC7411B),
         title: const Center(
           child: Text(
@@ -247,56 +232,706 @@ class HomePage extends StatelessWidget {
                   height: 16,
                 ),
 
-                Expanded(
-                  child: ListView.builder(
-                      itemCount: itens.length,
-                      itemBuilder: (BuildContext context, int index) {
-                        shrinkWrap:
-                        true;
-                        padding:
-                        const EdgeInsets.symmetric(horizontal: 23);
-                        //scrollDirection: Axis.vertical,
-
-                        return ListTile(
-                          title: Text(itens[index].nome),
-                          subtitle: Text(itens[index].descricao),
-                        );
-                        /*for (Items item in itens)
-                        ItemsListItem(
-                          codigoController: codigoController,
-                          descricaoController: descricaoController,
-                          itens: [],
-                          nomeController: nomeController,
-                          precoController: precoController,
-                        ),*/
-                      }),
-                ),
-
-                const SizedBox(
-                  height: 84,
-                ),
-
-                //SizedBox(width: 256,),
-
-                // botão flutuante
-                Align(
-                  alignment: Alignment.bottomLeft,
-                  //padding: const EdgeInsets.only(left: 319.0, bottom: 31),
-                  child: Positioned(
-                    width: 101,
-                    height: 101,
-                    child: FloatingActionButton(
-                      backgroundColor: const Color(0xffFFB987),
-                      onPressed: () {},
-                      child: const DecoratedBox(
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
+                Flexible(
+                  child: ListView(
+                    shrinkWrap: true,
+                    padding: const EdgeInsets.symmetric(horizontal: 23),
+                    scrollDirection: Axis.vertical,
+                    children: <Widget>[
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const ClientScreen()
+                            ),
+                            );
+                        },
+                        child: Container(
+                          width: 344,
+                          height: 156,
+                          decoration: BoxDecoration(
+                            color: const Color(0xffFFEFDC),
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: Row(
+                            children: [
+                              Container(
+                                margin: const EdgeInsets.only(
+                                    left: 8, top: 8, bottom: 8),
+                                width: 144,
+                                height: 140,
+                                decoration: BoxDecoration(
+                                  color: const Color(0xffFFDCBD),
+                                  borderRadius: BorderRadius.circular(12),
+                                ),
+                                child: const Padding(
+                                  padding: EdgeInsets.only(
+                                      left: 117.0, top: 8, right: 8, bottom: 113),
+                                  child: Icon(
+                                    Icons.circle,
+                                    size: 19,
+                                    color: Color(0xffE45E3A),
+                                  ),
+                                ),
+                              ),
+                               const Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Padding(
+                                          padding: EdgeInsets.only(
+                                              left: 11, top: 12, bottom: 8),
+                                          child: Text(
+                                            "001",
+                                            style: TextStyle(
+                                              fontFamily: 'FigTree',
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w400,
+                                              color: Color(0xffC7411B),
+                                            ),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: EdgeInsets.only(left: 112),
+                                          child: Icon(
+                                            Icons.access_time_rounded,
+                                            size: 20.95,
+                                            color: Color(0xffC7411B),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: EdgeInsets.only(left: 4.08),
+                                          child: Text(
+                                            "15m",
+                                            style: TextStyle(
+                                              fontFamily: 'FigTree',
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w500,
+                                              color: Color(0xffC7411B),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.only(
+                                          left: 11.0, right: 74, bottom: 10),
+                                      child: Text(
+                                        "Hambúrguer X",
+                                        style: TextStyle(
+                                          fontFamily: 'FigTree',
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.w600,
+                                          color: Color(0xffC7411B),
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.only(
+                                          left: 11, right: 8, bottom: 15),
+                                      child: Text(
+                                        "Pão de brioche torrado, carne\nbovina grelhada, cheddar\nalface, tomate e cebola roxa.",
+                                        style: TextStyle(
+                                          fontFamily: 'FigTree',
+                                          fontSize: 11,
+                                          fontWeight: FontWeight.w400,
+                                          color: Color(0xffC7411B),
+                                        ),
+                                      ),
+                                    ),
+                                    Row(
+                                      children: [
+                                        Padding(
+                                          padding: EdgeInsets.only(
+                                              left: 11.0, right: 76, bottom: 15),
+                                          child: Text(
+                                            "R\$ 19,90",
+                                            style: TextStyle(
+                                              fontFamily: 'FigTree',
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w600,
+                                              color: Color(0xffC7411B),
+                                            ),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: EdgeInsets.only(
+                                              bottom: 11, right: 5),
+                                          child: Icon(
+                                            Icons.star,
+                                            size: 21,
+                                            color: Color(0xffC7411B),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: EdgeInsets.only(
+                                              bottom: 11, right: 11),
+                                          child: Text(
+                                            "4,5",
+                                            style: TextStyle(
+                                              fontFamily: 'FigTree',
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w600,
+                                              color: Color(0xffC7411B),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
-                    ),
+                      const SizedBox(height: 16),
+                      Container(
+                        width: 344,
+                        height: 156,
+                        decoration: BoxDecoration(
+                          color: const Color(0xffFFEFDC),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Row(
+                          children: [
+                            Container(
+                                margin: const EdgeInsets.only(
+                                    left: 8, top: 8, bottom: 8),
+                                width: 144,
+                                height: 140,
+                                decoration: BoxDecoration(
+                                  color: const Color(0xffFFDCBD),
+                                  borderRadius: BorderRadius.circular(12),
+                                ),
+                                child:  const Column(
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsets.only(
+                                          left: 117.0,
+                                          top: 8,
+                                          right: 8,
+                                          bottom: 6),
+                                      child: Icon(
+                                        Icons.circle,
+                                        size: 19,
+                                        color: Color(0xffE45E3A),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.only(
+                                          left: 117.0, right: 8, bottom: 88),
+                                      child: Icon(
+                                        Icons.circle,
+                                        size: 19,
+                                        color: Color(0xffE45E3A),
+                                      ),
+                                    ),
+                                  ],
+                                )),
+                             const Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.only(
+                                        left: 11, top: 12, bottom: 8),
+                                    child: Text(
+                                      "002",
+                                      style: TextStyle(
+                                        fontFamily: 'FigTree',
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w400,
+                                        color: Color(0xffC7411B),
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.only(
+                                        left: 11.0, right: 74, bottom: 10),
+                                    child: Text(
+                                      "Hambúrguer Y",
+                                      style: TextStyle(
+                                        fontFamily: 'FigTree',
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w600,
+                                        color: Color(0xffC7411B),
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.only(
+                                        left: 11, right: 8, bottom: 15),
+                                    child: Text(
+                                      "Pão de brioche torrado, carne\nbovina grelhada, cheddar\nalface, tomate e cebola roxa.",
+                                      style: TextStyle(
+                                        fontFamily: 'FigTree',
+                                        fontSize: 11,
+                                        fontWeight: FontWeight.w400,
+                                        color: Color(0xffC7411B),
+                                      ),
+                                    ),
+                                  ),
+                                  Row(
+                                    children: [
+                                      Padding(
+                                        padding: EdgeInsets.only(
+                                            left: 11.0, right: 74, bottom: 15),
+                                        child: Text(
+                                          "R\$ 22,90",
+                                          style: TextStyle(
+                                            fontFamily: 'FigTree',
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.w600,
+                                            color: Color(0xffC7411B),
+                                          ),
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsets.only(
+                                            bottom: 11, right: 5),
+                                        child: Icon(
+                                          Icons.star,
+                                          size: 21,
+                                          color: Color(0xffC7411B),
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsets.only(
+                                            bottom: 11, right: 11),
+                                        child: Text(
+                                          "4,0",
+                                          style: TextStyle(
+                                            fontFamily: 'FigTree',
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.w600,
+                                            color: Color(0xffC7411B),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(height: 16),
+                      Container(
+                        width: 344,
+                        height: 156,
+                        decoration: BoxDecoration(
+                          color: const Color(0xffFFEFDC),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Row(
+                          children: [
+                            Container(
+                              margin: const EdgeInsets.only(
+                                  left: 8, top: 8, bottom: 8),
+                              width: 144,
+                              height: 140,
+                              decoration: BoxDecoration(
+                                color: const Color(0xffFFDCBD),
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                              child: const Padding(
+                                padding: EdgeInsets.only(
+                                    left: 117.0, top: 8, right: 8, bottom: 113),
+                                child: Icon(
+                                  Icons.circle,
+                                  size: 19,
+                                  color: Color(0xffE45E3A),
+                                ),
+                              ),
+                            ),
+                             const Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.only(
+                                        left: 11, top: 12, bottom: 8),
+                                    child: Text(
+                                      "003",
+                                      style: TextStyle(
+                                        fontFamily: 'FigTree',
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w400,
+                                        color: Color(0xffC7411B),
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.only(
+                                        left: 11.0, right: 74, bottom: 10),
+                                    child: Text(
+                                      "Hambúrguer Z",
+                                      style: TextStyle(
+                                        fontFamily: 'FigTree',
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w600,
+                                        color: Color(0xffC7411B),
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.only(
+                                        left: 11, right: 8, bottom: 14),
+                                    child: Text(
+                                      "Pão de brioche torrado, carne\nbovina grelhada, cheddar\nalface, tomate e cebola roxa.",
+                                      style: TextStyle(
+                                        fontFamily: 'FigTree',
+                                        fontSize: 11,
+                                        fontWeight: FontWeight.w400,
+                                        color: Color(0xffC7411B),
+                                      ),
+                                    ),
+                                  ),
+                                  Row(
+                                    children: [
+                                      Padding(
+                                        padding: EdgeInsets.only(
+                                            left: 11.0, right: 74, bottom: 15),
+                                        child: Text(
+                                          "R\$ 25,90",
+                                          style: TextStyle(
+                                            fontFamily: 'FigTree',
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.w600,
+                                            color: Color(0xffC7411B),
+                                          ),
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsets.only(
+                                            bottom: 11, right: 5),
+                                        child: Icon(
+                                          Icons.star,
+                                          size: 21,
+                                          color: Color(0xffC7411B),
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsets.only(
+                                            bottom: 11, right: 11),
+                                        child: Text(
+                                          "4,0",
+                                          style: TextStyle(
+                                            fontFamily: 'FigTree',
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.w600,
+                                            color: Color(0xffC7411B),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(height: 16),
+                      Container(
+                        width: 344,
+                        height: 156,
+                        decoration: BoxDecoration(
+                          color: const Color(0xffFFEFDC),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Row(
+                          children: [
+                            Container(
+                              margin: const EdgeInsets.only(
+                                  left: 8, top: 8, bottom: 8),
+                              width: 144,
+                              height: 140,
+                              decoration: BoxDecoration(
+                                color: const Color(0xffFFDCBD),
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                              child: const Padding(
+                                padding: EdgeInsets.only(
+                                    left: 117.0, top: 8, right: 8, bottom: 113),
+                                child: Icon(
+                                  Icons.circle,
+                                  size: 19,
+                                  color: Color(0xffE45E3A),
+                                ),
+                              ),
+                            ),
+                             const Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Row(
+                                    children: [
+                                      Padding(
+                                        padding: EdgeInsets.only(
+                                            left: 11, top: 12, bottom: 8),
+                                        child: Text(
+                                          "001",
+                                          style: TextStyle(
+                                            fontFamily: 'FigTree',
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.w400,
+                                            color: Color(0xffC7411B),
+                                          ),
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsets.only(left: 112),
+                                        child: Icon(
+                                          Icons.access_time_rounded,
+                                          size: 20.95,
+                                          color: Color(0xffC7411B),
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsets.only(left: 4.08),
+                                        child: Text(
+                                          "15m",
+                                          style: TextStyle(
+                                            fontFamily: 'FigTree',
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.w500,
+                                            color: Color(0xffC7411B),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.only(
+                                        left: 11.0, right: 74, bottom: 10),
+                                    child: Text(
+                                      "Hambúrguer X",
+                                      style: TextStyle(
+                                        fontFamily: 'FigTree',
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w600,
+                                        color: Color(0xffC7411B),
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.only(
+                                        left: 11, right: 8, bottom: 15),
+                                    child: Text(
+                                      "Pão de brioche torrado, carne\nbovina grelhada, cheddar\nalface, tomate e cebola roxa.",
+                                      style: TextStyle(
+                                        fontFamily: 'FigTree',
+                                        fontSize: 11,
+                                        fontWeight: FontWeight.w400,
+                                        color: Color(0xffC7411B),
+                                      ),
+                                    ),
+                                  ),
+                                  Row(
+                                    children: [
+                                      Padding(
+                                        padding: EdgeInsets.only(
+                                            left: 11.0, right: 76, bottom: 15),
+                                        child: Text(
+                                          "R\$ 19,90",
+                                          style: TextStyle(
+                                            fontFamily: 'FigTree',
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.w600,
+                                            color: Color(0xffC7411B),
+                                          ),
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsets.only(
+                                            bottom: 11, right: 5),
+                                        child: Icon(
+                                          Icons.star,
+                                          size: 21,
+                                          color: Color(0xffC7411B),
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsets.only(
+                                            bottom: 11, right: 11),
+                                        child: Text(
+                                          "4,5",
+                                          style: TextStyle(
+                                            fontFamily: 'FigTree',
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.w600,
+                                            color: Color(0xffC7411B),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(height: 16),
+                      Container(
+                        width: 344,
+                        height: 156,
+                        decoration: BoxDecoration(
+                          color: const Color(0xffFFEFDC),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Row(
+                          children: [
+                            Container(
+                                margin: const EdgeInsets.only(
+                                    left: 8, top: 8, bottom: 8),
+                                width: 144,
+                                height: 140,
+                                decoration: BoxDecoration(
+                                  color: const Color(0xffFFDCBD),
+                                  borderRadius: BorderRadius.circular(12),
+                                ),
+                                child:  const Column(
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsets.only(
+                                          left: 117.0,
+                                          top: 8,
+                                          right: 8,
+                                          bottom: 6),
+                                      child: Icon(
+                                        Icons.circle,
+                                        size: 19,
+                                        color: Color(0xffE45E3A),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.only(
+                                          left: 117.0, right: 8, bottom: 88),
+                                      child: Icon(
+                                        Icons.circle,
+                                        size: 19,
+                                        color: Color(0xffE45E3A),
+                                      ),
+                                    ),
+                                  ],
+                                )),
+                             const Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.only(
+                                        left: 11, top: 12, bottom: 8),
+                                    child: Text(
+                                      "002",
+                                      style: TextStyle(
+                                        fontFamily: 'FigTree',
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w400,
+                                        color: Color(0xffC7411B),
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.only(
+                                        left: 11.0, right: 74, bottom: 10),
+                                    child: Text(
+                                      "Hambúrguer Y",
+                                      style: TextStyle(
+                                        fontFamily: 'FigTree',
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w600,
+                                        color: Color(0xffC7411B),
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.only(
+                                        left: 11, right: 8, bottom: 15),
+                                    child: Text(
+                                      "Pão de brioche torrado, carne\nbovina grelhada, cheddar\nalface, tomate e cebola roxa.",
+                                      style: TextStyle(
+                                        fontFamily: 'FigTree',
+                                        fontSize: 11,
+                                        fontWeight: FontWeight.w400,
+                                        color: Color(0xffC7411B),
+                                      ),
+                                    ),
+                                  ),
+                                  Row(
+                                    children: [
+                                      Padding(
+                                        padding: EdgeInsets.only(
+                                            left: 11.0, right: 74, bottom: 15),
+                                        child: Text(
+                                          "R\$ 22,90",
+                                          style: TextStyle(
+                                            fontFamily: 'FigTree',
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.w600,
+                                            color: Color(0xffC7411B),
+                                          ),
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsets.only(
+                                            bottom: 11, right: 5),
+                                        child: Icon(
+                                          Icons.star,
+                                          size: 21,
+                                          color: Color(0xffC7411B),
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsets.only(
+                                            bottom: 11, right: 11),
+                                        child: Text(
+                                          "4,0",
+                                          style: TextStyle(
+                                            fontFamily: 'FigTree',
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.w600,
+                                            color: Color(0xffC7411B),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(height: 16),
+                    ],
                   ),
                 ),
               ],
+            ),
+          ),
+
+          // botão flutuante
+          Positioned(
+            bottom: 30,
+            right: 30,
+            width: 101,
+            height: 101,
+            child: FloatingActionButton(
+              backgroundColor: const Color(0xffFFB987),
+              onPressed: () {},
+              child: const DecoratedBox(
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                ),
+              ),
             ),
           ),
         ],
