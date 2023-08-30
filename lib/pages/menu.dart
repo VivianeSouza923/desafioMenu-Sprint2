@@ -275,7 +275,7 @@ class HomePage extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                               const Expanded(
+                                Expanded(
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
@@ -407,7 +407,7 @@ class HomePage extends StatelessWidget {
                                   color: const Color(0xffFFDCBD),
                                   borderRadius: BorderRadius.circular(12),
                                 ),
-                                child:  const Column(
+                                child:   Column(
                                   children: [
                                     Padding(
                                       padding: EdgeInsets.only(
@@ -432,7 +432,7 @@ class HomePage extends StatelessWidget {
                                     ),
                                   ],
                                 )),
-                             const Expanded(
+                              Expanded(
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -549,7 +549,7 @@ class HomePage extends StatelessWidget {
                                 ),
                               ),
                             ),
-                             const Expanded(
+                              Expanded(
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -666,7 +666,7 @@ class HomePage extends StatelessWidget {
                                 ),
                               ),
                             ),
-                             const Expanded(
+                              Expanded(
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -797,7 +797,7 @@ class HomePage extends StatelessWidget {
                                   color: const Color(0xffFFDCBD),
                                   borderRadius: BorderRadius.circular(12),
                                 ),
-                                child:  const Column(
+                                child:   Column(
                                   children: [
                                     Padding(
                                       padding: EdgeInsets.only(
@@ -822,7 +822,7 @@ class HomePage extends StatelessWidget {
                                     ),
                                   ],
                                 )),
-                             const Expanded(
+                              Expanded(
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [

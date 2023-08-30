@@ -1,3 +1,6 @@
+import 'package:desafiomenu_spring2/pages/menu.dart';
+import 'package:desafiomenu_spring2/pages/menu_com_item_criado.dart';
+import 'package:desafiomenu_spring2/pages/n_mexer_menu_com_listview_normal.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
@@ -155,7 +158,7 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               child: _imageFile == null
-                                  ? const Column(
+                                  ?  Column(
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,
                                       children: [
@@ -606,6 +609,14 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
                           ],
                         ),
                         InkWell(
+
+                          onTap: () {
+                            Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const MenuList()),
+          );
+                          },
                           child: Padding(
                             padding: const EdgeInsets.only(
                                 top: 32.0, left: 24, right: 24, bottom: 24),
