@@ -1,10 +1,11 @@
+import 'dart:ffi';
+
 import 'package:desafiomenu_spring2/pages/menu.dart';
-import 'package:desafiomenu_spring2/pages/menu_com_item_criado.dart';
-import 'package:desafiomenu_spring2/pages/n_mexer_menu_com_listview_normal.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 import 'dart:math';
+import 'package:desafiomenu_spring2/models/itenss.dart';
 
 class Restaurant extends StatelessWidget {
   const Restaurant({Key? key}) : super(key: key);
@@ -32,6 +33,8 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
   final TextEditingController precoController = TextEditingController();
   final TextEditingController descricaoController = TextEditingController();
   final TextEditingController categoriasController = TextEditingController();
+
+  List<Items> itens = [];
 
   bool showNomeIcon = false;
   bool showCodigoIcon = false;
@@ -158,7 +161,7 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               child: _imageFile == null
-                                  ?  Column(
+                                  ? const Column(
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,
                                       children: [
@@ -362,9 +365,9 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
                             ),
                             child: ScrollbarTheme(
                               data: ScrollbarThemeData(
-              thumbColor: MaterialStateProperty.all<Color>(
-                  Color(0xffFFB987)), // Cor do polegar da barra de rolagem
-            ),
+                                thumbColor: MaterialStateProperty.all<Color>(Color(
+                                    0xffFFB987)), // Cor do polegar da barra de rolagem
+                              ),
                               child: Column(
                                 children: [
                                   Row(
@@ -609,13 +612,38 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
                           ],
                         ),
                         InkWell(
-
                           onTap: () {
+                            String text = nomeController.text;
+                            int text1 = int.parse(codigoController.text);
+                            double text2 = double.parse(precoController.text);
+                            String text3 = descricaoController.text;
+                            String text4 = categoriasController.text;
+
+                            setState(() {
+                              Items newItems = Items(
+                                nome: text,
+                                codigo: text1,
+                                preco: text2,
+                                descricao: text3,
+                                categorias: text4,
+                              );
+                              itens.add(newItems);
+                            });
+                            //limpar o campo após adicionar o item
+                            nomeController.clear();
+                            codigoController.clear();
+                            precoController.clear();
+                            descricaoController.clear();
+                            categoriasController.clear();
+
                             Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const MenuList()),
-          );
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const HomePage(),
+                              ),
+                            );
+
+                            adicionarItemAoCardapio(text, text2, text3, text1, text4);
                           },
                           child: Padding(
                             padding: const EdgeInsets.only(
@@ -656,4 +684,20 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
       ),
     );
   }
+
+
+  void adicionarItemAoCardapio(String nome, double preco, String descricao, int codigo, String categorias) {
+  final novoItem = Items(
+    nome: nome,
+    preco: preco,
+    descricao: descricao,
+    codigo: codigo, 
+    categorias: categorias,
+  );
+
+  setState(() {
+    itens.add(novoItem);
+  });
+}
+
 }

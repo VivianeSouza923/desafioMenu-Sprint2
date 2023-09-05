@@ -1,31 +1,18 @@
+import 'package:desafiomenu_spring2/pages/cliente.dart';
 import 'package:flutter/material.dart';
 
 import '../models/itenss.dart';
-import 'cliente.dart';
+import '../widgets/menu_item_widget.dart';
 
+class HomePage extends StatelessWidget {
+  const HomePage({Key? key}) : super(key: key);
 
-// eu ainda não tenho nenhum estado, nada, então estou começando com Stateless, não Statefull
-class MenuList extends StatefulWidget {
-  const MenuList({super.key});
-
-  @override
-  State<MenuList> createState() => _MenuListState();
-}
-
-class _MenuListState extends State<MenuList> {
-  //pegar texto de um campo:
-  final TextEditingController nomeController = TextEditingController();
-
-  // cada string é um título de uma tarefa
-  List<MenuItem> itens = [];
-  //Todo? deleteTodo;
-  int? deletedTodoPos;
 
   @override
   Widget build(BuildContext context) {
-    // base de todas ou praticamente todas as telas
-    return SafeArea(
-      child: Scaffold(
+    List<Items> itens = [];
+
+    return Scaffold(
       appBar: AppBar(
         toolbarHeight: 75, // Defina a altura desejada aqui
         backgroundColor: const Color(0xffC7411B),
@@ -257,183 +244,60 @@ class _MenuListState extends State<MenuList> {
                     padding: const EdgeInsets.symmetric(horizontal: 23),
                     scrollDirection: Axis.vertical,
                     children: <Widget>[
-                      InkWell(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const ClientScreen()
-                            ),
-                            );
-                        },
-                        child: Container(
-                          width: 344,
-                          height: 156,
-                          decoration: BoxDecoration(
-                            color: const Color(0xffFFEFDC),
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          child: Row(
-                            children: [
-                              Container(
-                                margin: const EdgeInsets.only(
-                                    left: 8, top: 8, bottom: 8),
-                                width: 144,
-                                height: 140,
-                                decoration: BoxDecoration(
-                                  color: const Color(0xffFFDCBD),
-                                  borderRadius: BorderRadius.circular(12),
-                                ),
-                                child: const Padding(
-                                  padding: EdgeInsets.only(
-                                      left: 117.0, top: 8, right: 8, bottom: 113),
-                                  child: Icon(
-                                    Icons.circle,
-                                    size: 19,
-                                    color: Color(0xffE45E3A),
-                                  ),
-                                ),
+                      const SizedBox(height: 16),
+                      Container(
+                        width: 344,
+                        height: 156,
+                        decoration: BoxDecoration(
+                          color: const Color(0xffFFEFDC),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Row(
+                          children: [
+                            for (Items item in itens)
+
+                              //É UM ITEM DA SUA LISTA
+                              /*ListTile(
+                          title: Text(tarefa),
+                          subtitle: Text(
+                              'Data: ${dataAtual.day}/${dataAtual.month}/${dataAtual.year}'),
+                          leading: const Icon(Icons.edit),
+                          onTap: () {
+                            print("Tarefa: $tarefa");
+                          },
+                        ),*/
+
+                              ItemsListItem(
+                                item: item,
                               ),
-                                Expanded(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Row(
-                                      children: [
-                                        Padding(
-                                          padding: EdgeInsets.only(
-                                              left: 11, top: 12, bottom: 8),
-                                          child: Text(
-                                            "001",
-                                            style: TextStyle(
-                                              fontFamily: 'FigTree',
-                                              fontSize: 16,
-                                              fontWeight: FontWeight.w400,
-                                              color: Color(0xffC7411B),
-                                            ),
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding: EdgeInsets.only(left: 112),
-                                          child: Icon(
-                                            Icons.access_time_rounded,
-                                            size: 20.95,
-                                            color: Color(0xffC7411B),
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding: EdgeInsets.only(left: 4.08),
-                                          child: Text(
-                                            "15m",
-                                            style: TextStyle(
-                                              fontFamily: 'FigTree',
-                                              fontSize: 16,
-                                              fontWeight: FontWeight.w500,
-                                              color: Color(0xffC7411B),
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsets.only(
-                                          left: 11.0, right: 74, bottom: 10),
-                                      child: Text(
-                                        "Hambúrguer X",
-                                        style: TextStyle(
-                                          fontFamily: 'FigTree',
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.w600,
-                                          color: Color(0xffC7411B),
-                                        ),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsets.only(
-                                          left: 11, right: 8, bottom: 15),
-                                      child: Text(
-                                        "Pão de brioche torrado, carne\nbovina grelhada, cheddar\nalface, tomate e cebola roxa.",
-                                        style: TextStyle(
-                                          fontFamily: 'FigTree',
-                                          fontSize: 11,
-                                          fontWeight: FontWeight.w400,
-                                          color: Color(0xffC7411B),
-                                        ),
-                                      ),
-                                    ),
-                                    Row(
-                                      children: [
-                                        Padding(
-                                          padding: EdgeInsets.only(
-                                              left: 11.0, right: 76, bottom: 15),
-                                          child: Text(
-                                            "R\$ 19,90",
-                                            style: TextStyle(
-                                              fontFamily: 'FigTree',
-                                              fontSize: 16,
-                                              fontWeight: FontWeight.w600,
-                                              color: Color(0xffC7411B),
-                                            ),
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding: EdgeInsets.only(
-                                              bottom: 11, right: 5),
-                                          child: Icon(
-                                            Icons.star,
-                                            size: 21,
-                                            color: Color(0xffC7411B),
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding: EdgeInsets.only(
-                                              bottom: 11, right: 11),
-                                          child: Text(
-                                            "4,5",
-                                            style: TextStyle(
-                                              fontFamily: 'FigTree',
-                                              fontSize: 16,
-                                              fontWeight: FontWeight.w600,
-                                              color: Color(0xffC7411B),
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
+                          ],
                         ),
                       ),
-                      
-                      const SizedBox(height: 16),
                     ],
+                  ),
+                ),
+
+                // botão flutuante
+                Positioned(
+                  bottom: 30,
+                  right: 30,
+                  width: 101,
+                  height: 101,
+                  child: FloatingActionButton(
+                    backgroundColor: const Color(0xffFFB987),
+                    onPressed: () {},
+                    child: const DecoratedBox(
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                      ),
+                    ),
                   ),
                 ),
               ],
             ),
           ),
-
-          // botão flutuante
-          Positioned(
-            bottom: 30,
-            right: 30,
-            width: 101,
-            height: 101,
-            child: FloatingActionButton(
-              backgroundColor: const Color(0xffFFB987),
-              onPressed: () {},
-              child: const DecoratedBox(
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                ),
-              ),
-            ),
-          ),
         ],
       ),
-    ),);
+    );
   }
 }

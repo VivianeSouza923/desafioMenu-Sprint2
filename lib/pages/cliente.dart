@@ -105,7 +105,7 @@ class ClientScreen extends StatelessWidget {
               ),
             ),
       
-             Row(
+            const Row(
               children: [
             
                 Padding(
@@ -148,7 +148,7 @@ class ClientScreen extends StatelessWidget {
               ],
             ),
       
-             Row(
+            const Row(
               children: [
       
                 Padding(
@@ -229,7 +229,7 @@ class ClientScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20),
                 ),
             
-                child:   Row(
+                child:  const Row(
                   children: [
                     Padding(
                   padding: EdgeInsets.only(left: 16.81, right: 11.43),
@@ -274,7 +274,11 @@ class ClientScreen extends StatelessWidget {
                   
                 ),
               ),
+
+              
             ),
+
+            SizedBox(height: 70,),
 
             
 
