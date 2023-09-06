@@ -44,7 +44,7 @@ class ItemsListItem extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.only(left: 11, top: 12, bottom: 8),
                       child: Text(
-                        item!.codigo.toString(),
+                        item!.codigo.toString().padLeft(3, '0'),
                         style: TextStyle(
                           fontFamily: 'FigTree',
                           fontSize: 16,
@@ -105,7 +105,7 @@ class ItemsListItem extends StatelessWidget {
                       padding:
                           EdgeInsets.only(left: 11.0, right: 76, bottom: 15),
                       child: Text(
-                        item!.preco.toString(),
+                       'R\$'+ item!.preco.toStringAsFixed(2),
                         style: TextStyle(
                           fontFamily: 'FigTree',
                           fontSize: 16,

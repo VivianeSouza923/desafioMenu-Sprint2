@@ -1,4 +1,3 @@
-import 'package:desafiomenu_spring2/pages/cliente.dart';
 import 'package:flutter/material.dart';
 
 import '../models/itenss.dart';
@@ -10,10 +9,10 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(itens.toString());
+    //print(itens.toString());
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 75, // Defina a altura desejada aqui
+       // toolbarHeight: 75, // Defina a altura desejada aqui
         backgroundColor: const Color(0xffC7411B),
         title: const Center(
           child: Text(

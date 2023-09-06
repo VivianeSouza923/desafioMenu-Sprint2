@@ -1,6 +1,5 @@
 //classe tarefa
 
-import 'package:flutter/material.dart';
 
 class Items {
   Items(
