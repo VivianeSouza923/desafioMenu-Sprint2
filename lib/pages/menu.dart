@@ -5,12 +5,12 @@ import '../models/itenss.dart';
 import '../widgets/menu_item_widget.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  final List<Items> itens;
+  const HomePage({required this.itens, Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    List<Items> itens = [];
-
+    print(itens.toString());
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 75, // Defina a altura desejada aqui
@@ -27,252 +27,249 @@ class HomePage extends StatelessWidget {
           ),
         ),
       ),
-      body: Stack(
-        children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 0.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const SizedBox(height: 26),
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Padding(
-                      padding: EdgeInsets.only(left: 23.0),
-                      child: Text(
-                        "Olá, boa noite!",
-                        style: TextStyle(
-                          fontFamily: 'FigTree',
-                          fontWeight: FontWeight.w500,
-                          fontSize: 24,
-                          color: Color(0xffC7411B),
-                        ),
-                      ),
-                    ),
-                    const Spacer(),
-                    Padding(
-                      padding: const EdgeInsets.only(right: 23.0),
-                      child: Container(
-                        width: 58,
-                        height: 56,
-                        decoration: BoxDecoration(
-                          color: const Color(0xffC7411B),
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: Transform.rotate(
-                          angle: 3.14159 / 2,
-                          child: const Icon(
-                            Icons.search,
-                            color: Color(0xffFFFBF6),
-                            size: 30.5,
+      body: SizedBox(
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
+        child: Stack(
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 0.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const SizedBox(height: 26),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Padding(
+                        padding: EdgeInsets.only(left: 23.0),
+                        child: Text(
+                          "Olá, boa noite!",
+                          style: TextStyle(
+                            fontFamily: 'FigTree',
+                            fontWeight: FontWeight.w500,
+                            fontSize: 24,
+                            color: Color(0xffC7411B),
                           ),
                         ),
                       ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 4),
-                const Padding(
-                  padding: EdgeInsets.only(left: 23.0),
-                  child: Text(
-                    "Cardápio",
-                    style: TextStyle(
-                      fontFamily: 'FigTree',
-                      fontWeight: FontWeight.w400,
-                      fontSize: 20,
-                      color: Color(0xffC7411B),
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 16),
-
-                // CARROSSEL DE TIPOS DE REFEIÇÕES - APENAS UMA LISTVIEW
-                Container(
-                  height: 56,
-                  width: 1000, // Defina a altura desejada para a ListView
-                  margin: const EdgeInsets.only(left: 23.0),
-                  child: ListView(
-                    scrollDirection: Axis.horizontal,
-                    children: <Widget>[
-                      Container(
-                        width: 131,
-                        height: 56,
-                        decoration: BoxDecoration(
-                          color: const Color(0xffC7411B),
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: const Padding(
-                          padding: EdgeInsets.symmetric(
-                              vertical: 16, horizontal: 37.5),
-                          child: Text(
-                            "Todos",
-                            style: TextStyle(
-                              fontFamily: 'FigTree',
-                              fontWeight: FontWeight.w500,
-                              fontSize: 20,
+                      const Spacer(),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 23.0),
+                        child: Container(
+                          width: 58,
+                          height: 56,
+                          decoration: BoxDecoration(
+                            color: const Color(0xffC7411B),
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: Transform.rotate(
+                            angle: 3.14159 / 2,
+                            child: const Icon(
+                              Icons.search,
                               color: Color(0xffFFFBF6),
-                            ),
-                          ),
-                        ),
-                      ),
-                      const SizedBox(
-                        width: 17,
-                      ),
-                      Container(
-                        width: 131,
-                        height: 56,
-                        decoration: BoxDecoration(
-                          color: const Color(0xffFFB987),
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: const Padding(
-                          padding: EdgeInsets.symmetric(
-                              vertical: 16, horizontal: 27),
-                          child: Text(
-                            "Petiscos",
-                            style: TextStyle(
-                              fontFamily: 'FigTree',
-                              fontWeight: FontWeight.w400,
-                              fontSize: 20,
-                              color: Color(0xffC7411B),
-                            ),
-                          ),
-                        ),
-                      ),
-                      const SizedBox(
-                        width: 17,
-                      ),
-                      Container(
-                        width: 131,
-                        height: 56,
-                        decoration: BoxDecoration(
-                          color: const Color(0xffFFB987),
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: const Padding(
-                          padding: EdgeInsets.symmetric(
-                              vertical: 17.0, horizontal: 15),
-                          child: Text(
-                            "Sobremesas",
-                            style: TextStyle(
-                              fontFamily: 'FigTree',
-                              fontWeight: FontWeight.w400,
-                              fontSize: 18,
-                              color: Color(0xffC7411B),
-                            ),
-                          ),
-                        ),
-                      ),
-                      const SizedBox(
-                        width: 17,
-                      ),
-                      Container(
-                        width: 131,
-                        height: 56,
-                        decoration: BoxDecoration(
-                          color: const Color(0xffFFB987),
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: const Padding(
-                          padding: EdgeInsets.symmetric(
-                              vertical: 17.0, horizontal: 36),
-                          child: Text(
-                            "Massas",
-                            style: TextStyle(
-                              fontFamily: 'FigTree',
-                              fontWeight: FontWeight.w400,
-                              fontSize: 18,
-                              color: Color(0xffC7411B),
-                            ),
-                          ),
-                        ),
-                      ),
-                      const SizedBox(
-                        width: 17,
-                      ),
-                      Container(
-                        width: 131,
-                        height: 56,
-                        decoration: BoxDecoration(
-                          color: const Color(0xffFFB987),
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: const Padding(
-                          padding: EdgeInsets.symmetric(
-                              vertical: 17.0, horizontal: 35),
-                          child: Text(
-                            "Bebidas",
-                            style: TextStyle(
-                              fontFamily: 'FigTree',
-                              fontWeight: FontWeight.w400,
-                              fontSize: 17,
-                              color: Color(0xffC7411B),
+                              size: 30.5,
                             ),
                           ),
                         ),
                       ),
                     ],
                   ),
-                ),
-
-                const SizedBox(
-                  height: 30,
-                ),
-
-                const Padding(
-                  padding: EdgeInsets.only(left: 23.0),
-                  child: Text(
-                    "Todos",
-                    style: TextStyle(
-                      fontFamily: 'FigTree',
-                      fontSize: 20,
-                      fontWeight: FontWeight.w400,
-                      color: Color(0xffC7411B),
-                    ),
-                  ),
-                ),
-
-                const SizedBox(
-                  height: 16,
-                ),
-
-                Flexible(
-                  child: ListView(
-                    shrinkWrap: true,
-                    padding: const EdgeInsets.symmetric(horizontal: 23),
-                    scrollDirection: Axis.vertical,
-                    children: <Widget>[
-                      const SizedBox(height: 16),
-                      for (Items item in itens)
-                        ItemsListItem(
-                          item: item,
-                        ),
-                    ],
-                  ),
-                ),
-
-                // botão flutuante
-                Positioned(
-                  //bottom: 30,
-                  right: 50,
-                  
-width: 101,
-                   height: 101,
-                  child: FloatingActionButton(
-                    backgroundColor: const Color(0xffFFB987),
-                    onPressed: () {},
-                    child: const DecoratedBox(
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
+                  const SizedBox(height: 4),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 23.0),
+                    child: Text(
+                      "Cardápio",
+                      style: TextStyle(
+                        fontFamily: 'FigTree',
+                        fontWeight: FontWeight.w400,
+                        fontSize: 20,
+                        color: Color(0xffC7411B),
                       ),
                     ),
                   ),
-                ),
-              ],
+                  const SizedBox(height: 16),
+
+                  // CARROSSEL DE TIPOS DE REFEIÇÕES - APENAS UMA LISTVIEW
+                  Container(
+                    height: 56,
+                    width: 1000, // Defina a altura desejada para a ListView
+                    margin: const EdgeInsets.only(left: 23.0),
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: <Widget>[
+                        Container(
+                          width: 131,
+                          height: 56,
+                          decoration: BoxDecoration(
+                            color: const Color(0xffC7411B),
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: const Padding(
+                            padding: EdgeInsets.symmetric(
+                                vertical: 16, horizontal: 37.5),
+                            child: Text(
+                              "Todos",
+                              style: TextStyle(
+                                fontFamily: 'FigTree',
+                                fontWeight: FontWeight.w500,
+                                fontSize: 20,
+                                color: Color(0xffFFFBF6),
+                              ),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 17,
+                        ),
+                        Container(
+                          width: 131,
+                          height: 56,
+                          decoration: BoxDecoration(
+                            color: const Color(0xffFFB987),
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: const Padding(
+                            padding: EdgeInsets.symmetric(
+                                vertical: 16, horizontal: 27),
+                            child: Text(
+                              "Petiscos",
+                              style: TextStyle(
+                                fontFamily: 'FigTree',
+                                fontWeight: FontWeight.w400,
+                                fontSize: 20,
+                                color: Color(0xffC7411B),
+                              ),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 17,
+                        ),
+                        Container(
+                          width: 131,
+                          height: 56,
+                          decoration: BoxDecoration(
+                            color: const Color(0xffFFB987),
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: const Padding(
+                            padding: EdgeInsets.symmetric(
+                                vertical: 17.0, horizontal: 15),
+                            child: Text(
+                              "Sobremesas",
+                              style: TextStyle(
+                                fontFamily: 'FigTree',
+                                fontWeight: FontWeight.w400,
+                                fontSize: 18,
+                                color: Color(0xffC7411B),
+                              ),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 17,
+                        ),
+                        Container(
+                          width: 131,
+                          height: 56,
+                          decoration: BoxDecoration(
+                            color: const Color(0xffFFB987),
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: const Padding(
+                            padding: EdgeInsets.symmetric(
+                                vertical: 17.0, horizontal: 36),
+                            child: Text(
+                              "Massas",
+                              style: TextStyle(
+                                fontFamily: 'FigTree',
+                                fontWeight: FontWeight.w400,
+                                fontSize: 18,
+                                color: Color(0xffC7411B),
+                              ),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 17,
+                        ),
+                        Container(
+                          width: 131,
+                          height: 56,
+                          decoration: BoxDecoration(
+                            color: const Color(0xffFFB987),
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: const Padding(
+                            padding: EdgeInsets.symmetric(
+                                vertical: 17.0, horizontal: 35),
+                            child: Text(
+                              "Bebidas",
+                              style: TextStyle(
+                                fontFamily: 'FigTree',
+                                fontWeight: FontWeight.w400,
+                                fontSize: 17,
+                                color: Color(0xffC7411B),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+
+                  const SizedBox(
+                    height: 30,
+                  ),
+
+                  const Padding(
+                    padding: EdgeInsets.only(left: 23.0),
+                    child: Text(
+                      "Todos",
+                      style: TextStyle(
+                        fontFamily: 'FigTree',
+                        fontSize: 20,
+                        fontWeight: FontWeight.w400,
+                        color: Color(0xffC7411B),
+                      ),
+                    ),
+                  ),
+
+                  const SizedBox(
+                    height: 16,
+                  ),
+
+                  Flexible(
+                    child: ListView(
+                      shrinkWrap: true,
+                      padding: const EdgeInsets.symmetric(horizontal: 23),
+                      scrollDirection: Axis.vertical,
+                      children: <Widget>[
+                        const SizedBox(height: 16),
+                        for (Items item in itens)
+                          ItemsListItem(
+                            item: item,
+                          ),
+                      ],
+                    ),
+                  ),
+
+                  // botão flutuante
+                ],
+              ),
             ),
+          ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: const Color(0xffFFB987),
+        onPressed: () {},
+        child: const DecoratedBox(
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
           ),
-        ],
+        ),
       ),
     );
   }

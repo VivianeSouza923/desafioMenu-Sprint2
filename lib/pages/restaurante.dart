@@ -161,7 +161,7 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               child: _imageFile == null
-                                  ? const Column(
+                                  ? Column(
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,
                                       children: [
@@ -619,16 +619,13 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
                             String text3 = descricaoController.text;
                             String text4 = categoriasController.text;
 
-                            setState(() {
-                              Items newItems = Items(
-                                nome: text,
-                                codigo: text1,
-                                preco: text2,
-                                descricao: text3,
-                                categorias: text4,
-                              );
-                              itens.add(newItems);
-                            });
+                            adicionarItemAoCardapio(
+                              text,
+                              text2,
+                              text3,
+                              text1,
+                              text4,
+                            );
                             //limpar o campo após adicionar o item
                             nomeController.clear();
                             codigoController.clear();
@@ -639,11 +636,9 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => const HomePage(),
+                                builder: (context) => HomePage(itens: itens),
                               ),
                             );
-
-                            adicionarItemAoCardapio(text, text2, text3, text1, text4);
                           },
                           child: Padding(
                             padding: const EdgeInsets.only(
@@ -685,19 +680,18 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
     );
   }
 
+  void adicionarItemAoCardapio(String nome, double preco, String descricao,
+      int codigo, String categorias) {
+    final novoItem = Items(
+      nome: nome,
+      preco: preco,
+      descricao: descricao,
+      codigo: codigo,
+      categorias: categorias,
+    );
 
-  void adicionarItemAoCardapio(String nome, double preco, String descricao, int codigo, String categorias) {
-  final novoItem = Items(
-    nome: nome,
-    preco: preco,
-    descricao: descricao,
-    codigo: codigo, 
-    categorias: categorias,
-  );
-
-  setState(() {
-    itens.add(novoItem);
-  });
-}
-
+    setState(() {
+      itens.add(novoItem);
+    });
+  }
 }
